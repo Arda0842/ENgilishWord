@@ -16,8 +16,8 @@
     :root {
       --bg-grad-1: #0f172a;
       --bg-grad-2: #1e1b4b;
-      --card-bg: rgba(30, 41, 59, 0.85);
-      --card-border: rgba(255, 255, 255, 0.1);
+      --card-bg: rgba(30, 41, 59, 0.88);
+      --card-border: rgba(255, 255, 255, 0.12);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --primary: #6366f1;
@@ -49,19 +49,18 @@
 
     .container {
       width: 100%;
-      max-width: 720px;
+      max-width: 760px;
       background: var(--card-bg);
       backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: 24px;
       padding: 32px;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .header h1 {
@@ -80,20 +79,20 @@
 
     /* Upload Zone */
     .upload-zone {
-      border: 2px dashed rgba(99, 102, 241, 0.5);
+      border: 2px dashed rgba(99, 102, 241, 0.55);
       border-radius: 18px;
-      padding: 36px 24px;
+      padding: 28px 20px;
       text-align: center;
       cursor: pointer;
-      background: rgba(99, 102, 241, 0.05);
+      background: rgba(99, 102, 241, 0.06);
       transition: all 0.25s ease;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .upload-zone:hover, .upload-zone.dragover {
       border-color: #818cf8;
-      background: rgba(99, 102, 241, 0.12);
+      background: rgba(99, 102, 241, 0.14);
       transform: translateY(-2px);
     }
 
@@ -105,19 +104,19 @@
     }
 
     .upload-icon {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
       display: block;
     }
 
     .upload-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
 
     .upload-subtitle {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
     }
 
@@ -126,35 +125,90 @@
       gap: 8px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .badge {
       font-size: 0.75rem;
       font-weight: 600;
-      padding: 5px 12px;
+      padding: 4px 11px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.08);
       color: #cbd5e1;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    /* Preset Lists Bar */
+    .presets-box {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+
+    .presets-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .presets-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Column Mapping Selector (shown when multi-column table uploaded) */
+    .col-mapper {
+      display: none;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .col-mapper.visible {
+      display: flex;
+    }
+
+    .col-mapper label {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .col-mapper select {
+      background: rgba(15, 23, 42, 0.9);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
     /* Manual / Paste Toggle */
     .paste-section {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .paste-toggle {
       background: none;
       border: none;
       color: #818cf8;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 10px;
     }
 
     .paste-toggle:hover {
@@ -163,7 +217,7 @@
 
     .paste-box {
       display: none;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .paste-box.open {
@@ -172,7 +226,7 @@
 
     .paste-box textarea {
       width: 100%;
-      height: 120px;
+      height: 110px;
       background: rgba(15, 23, 42, 0.7);
       border: 1px solid var(--card-border);
       border-radius: 12px;
@@ -180,26 +234,21 @@
       color: var(--text-main);
       font-size: 0.9rem;
       resize: vertical;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .paste-box textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    /* Settings & Word Status */
+    /* Status & Preview */
     .status-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      background: rgba(15, 23, 42, 0.6);
-      padding: 14px 18px;
+      background: rgba(15, 23, 42, 0.65);
+      padding: 13px 16px;
       border-radius: 14px;
       border: 1px solid var(--card-border);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .word-count-badge {
@@ -207,7 +256,7 @@
       align-items: center;
       gap: 10px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     .dot {
@@ -222,48 +271,14 @@
       box-shadow: 0 0 10px var(--success);
     }
 
-    .settings-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-
-    .setting-card {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid var(--card-border);
-      padding: 12px 14px;
-      border-radius: 12px;
-    }
-
-    .setting-card label {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .setting-card select, .setting-card input {
-      width: 100%;
-      background: rgba(30, 41, 59, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-main);
-      padding: 8px 10px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* Word Preview List */
     .preview-list {
-      max-height: 170px;
+      max-height: 190px;
       overflow-y: auto;
-      background: rgba(15, 23, 42, 0.55);
+      background: rgba(15, 23, 42, 0.6);
       border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 10px 14px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       display: none;
     }
 
@@ -274,7 +289,8 @@
     .preview-item {
       display: flex;
       justify-content: space-between;
-      padding: 6px 4px;
+      gap: 16px;
+      padding: 7px 4px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       font-size: 0.86rem;
     }
@@ -284,19 +300,55 @@
     }
 
     .preview-word {
-      font-weight: 600;
-      color: #e2e8f0;
+      font-weight: 700;
+      color: #a5b4fc;
+      flex-shrink: 0;
     }
 
     .preview-meaning {
-      color: #94a3b8;
+      color: #e2e8f0;
+      text-align: right;
+    }
+
+    /* Settings */
+    .settings-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .setting-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--card-border);
+      padding: 11px 13px;
+      border-radius: 12px;
+    }
+
+    .setting-card label {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .setting-card select {
+      width: 100%;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-main);
+      padding: 7px 9px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
 
     /* Buttons */
     .btn {
       border: none;
       border-radius: 12px;
-      padding: 14px 24px;
+      padding: 14px 22px;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
@@ -329,35 +381,38 @@
       background: rgba(255, 255, 255, 0.08);
       color: var(--text-main);
       border: 1px solid var(--card-border);
-      padding: 8px 14px;
-      font-size: 0.85rem;
+      padding: 8px 13px;
+      font-size: 0.82rem;
+      border-radius: 10px;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.16);
     }
 
-    /* Quiz Screen */
+    /* Screens */
     .screen {
       display: none;
     }
 
     .screen.active {
       display: block;
-      animation: fadeIn 0.25s ease;
+      animation: fadeIn 0.22s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
+      from { opacity: 0; transform: translateY(5px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Quiz Screen */
     .quiz-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 14px;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .progress-pill {
@@ -371,8 +426,8 @@
 
     .live-score {
       display: flex;
-      gap: 12px;
-      font-size: 0.88rem;
+      gap: 14px;
+      font-size: 0.9rem;
       font-weight: 700;
     }
 
@@ -383,7 +438,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .timer-bar-bg {
@@ -399,70 +454,72 @@
       width: 100%;
       background: var(--success);
       border-radius: 999px;
-      transition: width 0.1s linear, background-color 0.25s ease;
+      transition: width 0.08s linear, background-color 0.2s ease;
     }
 
     .timer-number {
       min-width: 52px;
       text-align: right;
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-variant-numeric: tabular-nums;
     }
 
     .question-box {
-      background: rgba(15, 23, 42, 0.65);
+      background: rgba(15, 23, 42, 0.7);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      padding: 36px 24px;
+      padding: 30px 22px;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .question-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       color: var(--text-muted);
       margin-bottom: 10px;
       font-weight: 600;
     }
 
     .question-word {
-      font-size: 2rem;
+      font-size: 1.85rem;
       font-weight: 800;
       color: #fff;
       word-break: break-word;
+      line-height: 1.3;
     }
 
     .options-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 18px;
+      gap: 11px;
+      margin-bottom: 16px;
     }
 
     .option-btn {
       width: 100%;
       text-align: left;
-      background: rgba(30, 41, 59, 0.9);
+      background: rgba(30, 41, 59, 0.92);
       border: 2px solid rgba(255, 255, 255, 0.1);
       border-radius: 14px;
-      padding: 16px 20px;
+      padding: 15px 18px;
       color: var(--text-main);
-      font-size: 1.02rem;
+      font-size: 0.98rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.16s ease;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      line-height: 1.4;
     }
 
     .option-btn:hover:not(:disabled) {
       border-color: #818cf8;
-      background: rgba(99, 102, 241, 0.14);
+      background: rgba(99, 102, 241, 0.15);
       transform: translateX(4px);
     }
 
@@ -481,7 +538,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #cbd5e1;
       flex-shrink: 0;
     }
@@ -509,7 +566,7 @@
     }
 
     .feedback-banner {
-      min-height: 28px;
+      min-height: 26px;
       text-align: center;
       font-weight: 700;
       font-size: 0.95rem;
@@ -520,25 +577,25 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin: 24px 0;
+      margin: 20px 0;
     }
 
     .stat-box {
       background: rgba(15, 23, 42, 0.65);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 20px 12px;
+      padding: 18px 12px;
       text-align: center;
     }
 
     .stat-num {
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-weight: 800;
       margin-bottom: 4px;
     }
 
     .stat-label {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       font-weight: 600;
     }
@@ -550,7 +607,7 @@
       border: 1px solid var(--card-border);
       border-radius: 14px;
       padding: 12px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .history-item {
@@ -593,12 +650,12 @@
 
     .action-group .btn {
       flex: 1;
-      min-width: 180px;
+      min-width: 170px;
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 540px) {
       .container { padding: 20px; }
-      .question-word { font-size: 1.5rem; }
+      .question-word { font-size: 1.45rem; }
       .results-stats { grid-template-columns: 1fr; }
     }
   </style>
@@ -610,14 +667,14 @@
     <div id="setupScreen" class="screen active">
       <div class="header">
         <h1>📚 Kelime Ezber & Test</h1>
-        <p>Word veya Excel dosyanı yükle, kelimeler otomatik taransın ve 10 saniyelik test başlasın!</p>
+        <p>Excel veya Word dosyanı yükle ya da hazır listelerinden birini seçip hemen 10 saniyelik teste başla!</p>
       </div>
 
       <div class="upload-zone" id="dropZone">
         <input type="file" id="fileInput" accept=".xlsx,.xls,.csv,.docx,.txt" multiple />
         <span class="upload-icon">📂</span>
         <div class="upload-title">Word, Excel veya Metin Dosyasını Buraya Bırak ya da Tıkla</div>
-        <div class="upload-subtitle">İçindeki tablolar ve "kelime - anlam" satırları otomatik taranır</div>
+        <div class="upload-subtitle">"Kelime" ve "Türkçe Anlamı" sütunları otomatik algılanır ("Dil: en/de" sütunu otomatik atlanır)</div>
         <div class="file-badges">
           <span class="badge">📊 Excel (.xlsx, .xls, .csv)</span>
           <span class="badge">📝 Word (.docx)</span>
@@ -625,17 +682,36 @@
         </div>
       </div>
 
-      <div class="paste-section">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-          <button type="button" class="paste-toggle" id="pasteToggleBtn">
-            ✏️ Metin olarak yapıştır veya örnek kelimeleri yükle
-          </button>
-          <button type="button" class="btn btn-secondary" id="sampleBtn">⚡ Örnek Kelime Yükle</button>
+      <!-- Çok sütunlu Excel/Word dosyası yüklendiğinde sütun seçici -->
+      <div class="col-mapper" id="colMapper">
+        <span style="font-size:0.82rem; font-weight:700; color:#a5b4fc;">📊 Tablo Sütunları:</span>
+        <div>
+          <label for="wordColSelect">Kelime Sütunu:</label>
+          <select id="wordColSelect"></select>
         </div>
+        <div>
+          <label for="meaningColSelect">Anlam Sütunu:</label>
+          <select id="meaningColSelect"></select>
+        </div>
+      </div>
 
+      <!-- Hazır Excel Listeleri -->
+      <div class="presets-box">
+        <span class="presets-title">⚡ Senin Excel Dosyaların (Tek Tıkla Yükle):</span>
+        <div class="presets-buttons">
+          <button type="button" class="btn btn-secondary" id="loadPreset1">📗 Yeni Kelimeler Listesi (30)</button>
+          <button type="button" class="btn btn-secondary" id="loadPreset2">📘 Kelimeler Listesi (26)</button>
+          <button type="button" class="btn btn-secondary" id="loadPreset3">📙 Tüm Kelimeler Tablosu (541)</button>
+        </div>
+      </div>
+
+      <div class="paste-section">
+        <button type="button" class="paste-toggle" id="pasteToggleBtn">
+          ✏️ Manuel kelime yapıştır / ekle
+        </button>
         <div class="paste-box" id="pasteBox">
-          <textarea id="pasteInput" placeholder="Her satıra bir kelime ve anlamını yazın:&#10;abandon - terk etmek&#10;diligent : çalışkan&#10;inevitable = kaçınılmaz"></textarea>
-          <button type="button" class="btn btn-secondary" id="parsePasteBtn" style="width:100%;">📥 Yazılan Kelimeleri Tara ve Ekle</button>
+          <textarea id="pasteInput" placeholder="Her satıra bir kelime ve anlamını yazın:&#10;decodes - çözer&#10;instructions : talimatlar&#10;adequate = yeterli"></textarea>
+          <button type="button" class="btn btn-secondary" id="parsePasteBtn" style="width:100%;">📥 Yazılan Kelimeleri Listeye Yükle</button>
         </div>
       </div>
 
@@ -645,7 +721,7 @@
           <span id="wordCountText">Henüz kelime yüklenmedi</span>
         </div>
         <div style="display:flex; gap:8px;">
-          <button type="button" class="btn btn-secondary" id="togglePreviewBtn" style="display:none;">👁️ Listeyi Gör</button>
+          <button type="button" class="btn btn-secondary" id="togglePreviewBtn" style="display:none;">👁️ Kelimeleri Gör</button>
           <button type="button" class="btn btn-secondary" id="clearWordsBtn" style="display:none;">🗑️ Temizle</button>
         </div>
       </div>
@@ -656,17 +732,28 @@
         <div class="setting-card">
           <label for="directionSelect">Soru Yönü</label>
           <select id="directionSelect">
-            <option value="normal">Kelime → Anlamı</option>
-            <option value="reverse">Anlamı → Kelime</option>
+            <option value="normal" selected>İngilizce → Türkçe</option>
+            <option value="reverse">Türkçe → İngilizce</option>
             <option value="mixed">Karışık Sor</option>
+          </select>
+        </div>
+        <div class="setting-card">
+          <label for="countSelect">Soru Sayısı</label>
+          <select id="countSelect">
+            <option value="all" selected>Tüm Kelimeler</option>
+            <option value="10">10 Soru</option>
+            <option value="20">20 Soru</option>
+            <option value="30">30 Soru</option>
+            <option value="50">50 Soru</option>
+            <option value="100">100 Soru</option>
           </select>
         </div>
         <div class="setting-card">
           <label for="timeSelect">Soru Başına Süre</label>
           <select id="timeSelect">
-            <option value="10" selected>10 Saniye (Standart)</option>
-            <option value="5">5 Saniye (Hızlı)</option>
-            <option value="15">15 Saniye (Rahat)</option>
+            <option value="10" selected>10 Saniye</option>
+            <option value="5">5 Saniye</option>
+            <option value="15">15 Saniye</option>
             <option value="20">20 Saniye</option>
           </select>
         </div>
@@ -685,7 +772,7 @@
           <span class="score-good">✔ Doğru: <span id="liveCorrect">0</span></span>
           <span class="score-bad">✖ Yanlış: <span id="liveWrong">0</span></span>
         </div>
-        <button type="button" class="btn btn-secondary" id="quitQuizBtn" style="padding:6px 12px; font-size:0.8rem;">Bitir</button>
+        <button type="button" class="btn btn-secondary" id="quitQuizBtn" style="padding:6px 12px; font-size:0.8rem;">Testi Bitir</button>
       </div>
 
       <div class="timer-wrapper">
@@ -696,7 +783,7 @@
       </div>
 
       <div class="question-box">
-        <div class="question-label" id="questionLabel">BU KELİMENİN ANLAMI NEDİR?</div>
+        <div class="question-label" id="questionLabel">BU KELİMENİN TÜRKÇE ANLAMI NEDİR?</div>
         <div class="question-word" id="questionWord">...</div>
       </div>
 
@@ -708,8 +795,8 @@
     <!-- EKRAN 3: SONUÇ EKRANI -->
     <div id="resultScreen" class="screen">
       <div class="header">
-        <h1>🏆 Test Tamamlandı!</h1>
-        <p id="resultSubtitle">İşte performans özeti ve yanıtların</p>
+        <h1>🏆 Test Sonucu</h1>
+        <p id="resultSubtitle">Doğru ve yanlış cevaplarının özeti</p>
       </div>
 
       <div class="results-stats">
@@ -734,29 +821,38 @@
           🔁 Sadece Yanlışları Çöz
         </button>
         <button type="button" class="btn btn-primary" id="restartAllBtn">
-          🔄 Tümünü Tekrar Çöz
+          🔄 Tekrar Çöz
         </button>
         <button type="button" class="btn btn-secondary" id="backHomeBtn">
-          📂 Kelime Ekranına Dön
+          📂 Ana Ekrana Dön
         </button>
       </div>
     </div>
   </div>
 
   <script>
+    // --- HAZIR EXCEL LİSTELERİ (Bilgisayarındaki 3 Excel Dosyası) ---
+    const PRESET_DATA = {"yeniKelimeler":[{"w":"decodes","m":"çözer"},{"w":"instructions","m":"talimatlar"},{"w":"adequate","m":"Yeterli"},{"w":"allocation","m":"Tahsis"},{"w":"apparatus","m":"Cihaz"},{"w":"approach","m":"Yaklaşma-yol"},{"w":"approve","m":"onaylamak"},{"w":"architect","m":"mimar"},{"w":"base formula","m":"Temel formül"},{"w":"baseline","m":"temel çizgi"},{"w":"reuse","m":"Yeniden kullanım"},{"w":"budget","m":"Bütçe"},{"w":"request","m":"talep-istek"},{"w":"oriented","m":"Yönelim"},{"w":"enhance","m":"geliştirmek"},{"w":"spreadsheet","m":"e-tablo"},{"w":"enterprise","m":"kurumsal"},{"w":"publishing","m":"Yayında"},{"w":"nonetheless","m":"Yine de"},{"w":"familiar","m":"bilindik"},{"w":"prepared","m":"hazırlıklı"},{"w":"challenging","m":"zorlu"},{"w":"rewarding","m":"ödüllendirici"},{"w":"casual","m":"sıradan"},{"w":"field","m":"Alan"},{"w":"payroll","m":"maaş"},{"w":"satellite","m":"uydu"},{"w":"consistent","m":"tutarlı"},{"w":"reason","m":"sebep"},{"w":"pace","m":"hız, tempo"}],"kelimelerListesi":[{"w":"threats","m":"Tehditler"},{"w":"offers","m":"teklif eder, sunar"},{"w":"excellent","m":"mükemmel"},{"w":"unauthorized","m":"yetkisiz"},{"w":"destroy","m":"yok etmek"},{"w":"infected","m":"enfekte olmuş"},{"w":"malware","m":"zararlı yazılım"},{"w":"permits","m":"izin verir"},{"w":"deny","m":"reddetmek"},{"w":"credentials","m":"kimlik bilgileri"},{"w":"proper","m":"uygun, düzgün"},{"w":"purpose","m":"amaç"},{"w":"various","m":"çeşitli, farklı"},{"w":"failure","m":"arıza, hata"},{"w":"prediction","m":"tahmin"},{"w":"attempt","m":"teşebbüs etmek"},{"w":"trouble","m":"problem, sıkıntı"},{"w":"upgrade","m":"yükseltmek"},{"w":"entry","m":"giriş"},{"w":"make sure","m":"emin olmak"},{"w":"into","m":"içine"},{"w":"these","m":"bunlar"},{"w":"environment","m":"çevre"},{"w":"linker","m":"bağlayıcı"},{"w":"compiler","m":"derleyici"},{"w":"interpreter","m":"yorumlayıcı"}],"tumKelimeler":[{"w":"recovery block","m":"kurtarma bloğu, sistem hatası durumunda yedek olarak kullanılan otomatik kaydedilmiş veri bloğu"},{"w":"artifact","m":"yazılımın türünü veya işlevini belirleyen özellik, yapı, eser"},{"w":"icon","m":"simge, ikon"},{"w":"bachelor\u0027s degree","m":"lisans derecesi, üniversite diploması"},{"w":"error","m":"hata, yazılımda yanlış sonuca yol açan insan eylemi"},{"w":"BIOS","m":"temel giriş/çıkış sistemi, cihazın girdi ve çıktı işlemlerini kontrol eden donanım yazılımı (firmware) komut seti"},{"w":"SaaS","m":"Hizmet Olarak Yazılım (Software as a Service)"},{"w":"CD/DVD drive","m":"CD/DVD sürücüsü, disk okuma ve yazma aygıtı"},{"w":"accounting","m":"muhasebe, finansal işlemleri kaydetme ve yönetme süreci"},{"w":"computing cluster","m":"bilgi işlem kümesi, büyük miktarda veriyi işlemek için tasarlanmış son derece güçlü bilgisayar sistemi"},{"w":"layer","m":"katman, bir sistemin çalışma seviyesi"},{"w":"control","m":"kontrol etmek, denetlemek, bir şeyin eylemleri veya işlevleri üzerinde güce sahip olmak"},{"w":"stepwise refinement","m":"adım adım iyileştirme/inceltme, problemin daha küçük ve yönetilebilir parçalara bölündüğü tasarım yaklaşımı"},{"w":"control system","m":"kontrol sistemi, diğer cihazların eylemlerini düzenleyen cihaz veya cihazlar grubu"},{"w":"flat panel","m":"düz panel, ince ekranlı"},{"w":"convert","m":"dönüştürmek, çevirmek, farklı bir biçime veya ölçü sistemine değiştirmek"},{"w":"state","m":"1) durum, bir nesnenin niteliklerinin kümesi | 2) çok büyük bir sistem genelinde ortaklığa ve standartlaşmaya odaklanan kullanıcı ölçeği düzeyi"},{"w":"cost analysis","m":"maliyet analizi, giderleri açıklayan rapor"},{"w":"cursor","m":"imleç, kürsör"},{"w":"cover","m":"kapak, kılıf, koruma amacıyla başka bir şeyin üzerine yerleştirilen örtü"},{"w":"renaming property","m":"yeniden adlandırma özelliği, önemsiz farklılıkları olan iki programın aynı test kümeleriyle test edilebileceğini belirten test yeterliliği özelliği"},{"w":"data management","m":"veri yönetimi, bilgileri izleme ve değerlendirme yeteneği"},{"w":"WBS","m":"iş kırılım yapısı (work breakdown structure), projenin daha küçük gruplara ayrıştırılması"},{"w":"debugger","m":"hata ayıklayıcı, diğer bilgisayar programlarındaki hataları tespit eden ve düzelten program"},{"w":"point","m":"ondalık nokta, tam sayıdan sonra konulan nokta"},{"w":"decimal number","m":"ondalık sayı, 10 tabanlı sayı sistemindeki virgüllü/noktalı değer"},{"w":"functional equivalence","m":"işlevsel eşdeğerlik, farklı kodlanmış olsalar bile iki programın amaç ve işlev bakımından benzerlik ölçüsü"},{"w":"decline","m":"düşüş, azalma, gerileme"},{"w":"apparatus level","m":"cihaz/donanım düzeyi, kullanıcının etkileşime gireceği tuş ve donanımların şeklini ve hissini belirten materyal bileşeni görünümü"},{"w":"deny","m":"reddetmek, geri çevirmek, erişime izin vermemek"},{"w":"laser printer","m":"lazer yazıcı"},{"w":"design","m":"tasarlamak, bir şeyin nasıl oluşturulacağını planlamak"},{"w":"class","m":"sınıf, aynı nitelik kümesine sahip nesneler grubu"},{"w":"double","m":"ikiye katlamak, iki katı büyüklüğe veya miktara çıkarmak"},{"w":"PWB","m":"programcı çalışma tezgahı (programmer workbench), test ve uygulama aşamalarını destekleyen tümleşik ortam"},{"w":"dropdown menu","m":"açılır menü, bir öğeye tıklandığında altında beliren seçenekler listesi"},{"w":"expand","m":"genişlemek, büyümek"},{"w":"electronics","m":"elektronik, elektrik sistemleriyle çalışan makineler ve iletişim yöntemleri"},{"w":"oracle","m":"test kahini/orakülü, beklenen sonuçlarla gerçek test sonuçlarını karşılaştırmak için kullanılan mekanizma"},{"w":"embedded computer","m":"gömülü bilgisayar, daha büyük bir ürünün veya cihazın parçası olan bilgisayar"},{"w":"process-centered environment","m":"süreç merkezli ortam, yazılım geliştirme sürecine odaklanan geliştirme ortamı"},{"w":"enterprise software","m":"kurumsal yazılım, büyük bir şirket veya kuruluş için verileri düzenlemek ve kontrol etmek amacıyla kullanılan programlar bütünü"},{"w":"desktop","m":"1) masaüstü bilgisayar | 2) masaüstü ekran alanı, bilgisayar ekranındaki çalışma alanı"},{"w":"evaluate","m":"değerlendirmek, dikkatlice incelemek ve niteliklerini ölçmek"},{"w":"open system","m":"açık sistem, kütlenin girmesine ve çıkmasına izin veren sistem"},{"w":"eye contact","m":"göz teması"},{"w":"parallel development","m":"paralel geliştirme, aynı temel sürümden farklı revizyon dalları oluşturma uygulaması"},{"w":"fan","m":"fan, pervane, havayı hareket ettirerek soğutma sağlayan cihaz"},{"w":"programming-in-the-large","m":"büyük ölçekli programlama, uzun sürede birçok kişinin çalışmasını içeren karmaşık yazılım geliştirme yaklaşımı"},{"w":"firmware","m":"donanım yazılımı, gömülü yazılım, elektronik bir cihazı kontrol etmek için kullanılan sabit veri yapısı veya program"},{"w":"verification","m":"doğrulama, bir problemin gereksinimlerinin doğru ifade edildiğini belirleme süreci"},{"w":"flash drive","m":"flash bellek, USB bellek, silinip yeniden programlanabilen veri depolama aygıtı"},{"w":"degree of certainty","m":"kesinlik derecesi, kullanıcı gereksinimlerinin ve geliştirme kaynaklarının güvenilirliğini ölçen ölçek"},{"w":"foundation","m":"temel hazırlık dersi, öğrencilerin bir lisans programına başlamadan önce aldıkları genel çalışma dersi"},{"w":"fluctuate","m":"dalgalanmak, düzenli olarak değişmek"},{"w":"GUI","m":"grafiksel kullanıcı arayüzü (graphical user interface), menüler, simgeler ve pencereler kullanarak bilgisayarla görsel etkileşim kurma yolu"},{"w":"coupling","m":"bağlaşım/bağımlılık, bir sistemdeki modüller arasındaki bağlantıların gücünün ölçüsü"},{"w":"hard drive","m":"sabit disk, hard disk, bilgisayarın içine yerleştirilmiş ana veri depolama aygıtı"},{"w":"commitment style","m":"bağlılık tarzı, proje kararlarının proje hedefleri tarafından yönlendirildiği yönetim tarzı"},{"w":"#NAME?","m":"yüz (binli sayıları içinde kaç tane yüz olduğunu sayarak ifade etme biçimi, örn. 1400 için \"fourteen hundred\")"},{"w":"route planning","m":"rota planlama, bir varış noktasına nasıl ulaşılacağını belirleme süreci"},{"w":"IDE","m":"tümleşik geliştirme ortamı (integrated development environment), kaynak kodu düzenleyici, hata ayıklayıcı ve diğer araçları içeren yazılım uygulaması"},{"w":"user-friendly","m":"kullanıcı dostu, anlaşılması ve kullanımı kolay"},{"w":"image editing","m":"görüntü işleme, fotoğraf/resim düzenleme"},{"w":"task level","m":"görev düzeyi, hem makine hem de kullanıcı tarafından gerçekleştirilen görevlerle ilgilenen kavramsal bileşen görünümü"},{"w":"increase","m":"artmak, miktar veya sayıca büyümek"},{"w":"less","m":"daha az, eksi, çıkarılmış"},{"w":"inkjet printer","m":"mürekkep püskürtmeli yazıcı"},{"w":"general multiple change property","m":"genel çoklu değişim özelliği, aynı yapı ve veri akışı özelliklerine sahip programların yine de farklı kriterlerle test edilmesi gerektiğini belirten özellik"},{"w":"interpreter","m":"yorumlayıcı, diğer programları okuyan ve doğrudan çalıştıran program"},{"w":"black-box reuse","m":"kara kutu yeniden kullanımı, yazılım öğelerinin değiştirilmeden yeniden kullanıldığı yöntem"},{"w":"investigate","m":"araştırmak, incelemek, bir şey hakkında daha fazla bilgi edinmek"},{"w":"divide by","m":"bölmek, bir sayıyı başka bir sayıya eşit parçalara ayırmak"},{"w":"keyboard","m":"klavye"},{"w":"collaboration diagram","m":"işbirliği diyagramı, nesneleri belirli bir etkileşimle ilişkili olarak gösteren grafik"},{"w":"laptop","m":"dizüstü bilgisayar, laptop"},{"w":"software license","m":"yazılım lisansı, alıcıya programı kullanma hakkı veren yasal sözleşme"},{"w":"linear algebra","m":"doğrusal cebir, lineer cebir, doğruların ve düzlemlerin özellikleriyle ilgilenen matematik dalı"},{"w":"case","m":"kasa, koruyucu muhafaza"},{"w":"linker","m":"bağlayıcı (linker), başka bir programın çalışması için gereken kütüphanelere bağlantılar sağlayan program"},{"w":"complexity","m":"karmaşıklık, bir sistemi kurmak veya değiştirmek için gereken zaman ve kaynak miktarının ölçüsü"},{"w":"malware","m":"kötü amaçlı yazılım, zararlı yazılım"},{"w":"ergonomics","m":"ergonomi, kullanıcılar tarafından fiziksel olarak çalıştırılması amaçlanan donanım tasarımı çalışması"},{"w":"minus","m":"eksi, bir sayıdan başka bir sayının çıkarılması"},{"w":"application software","m":"uygulama yazılımı"},{"w":"mobile app","m":"mobil uygulama, cep telefonu veya el cihazlarına indirilebilen program"},{"w":"peer review","m":"meslektaş incelemesi, akran değerlendirmesi, mühendislerin kusurları bulmak için diğer mühendislerin programlarını okuması"},{"w":"monitor","m":"monitör, ekran, bilgisayar sinyallerini görüntülemek için kullanılan elektronik cihaz"},{"w":"standard","m":"standart, gerçek başarıların değerlendirildiği genel kabul görmüş başarı düzeyi"},{"w":"motherboard","m":"anakart, bilgisayarın merkezi devre kartı"},{"w":"multiply by","m":"çarpmak"},{"w":"multimedia player","m":"multimedya oynatıcı, ses, video ve diğer dosyaları oynatabilen cihaz"},{"w":"legacy system","m":"eski/miras sistem, güncellenmeye ve kullanılmaya devam eden eski yazılım sistemi"},{"w":"notebook","m":"notebook, genellikle dizüstü bilgisayardan (laptop) daha küçük olan ve daha az özelliğe sahip taşınabilir bilgisayar"},{"w":"allocation problem","m":"tahsis/dağıtım problemi, kaynakların istikrarsız olduğu ve mevcut kaynaklarla projeyi bitirmeye odaklanılan durum"},{"w":"operating system","m":"işletim sistemi, bilgisayarın donanımını yöneten ve temel işlemleri yapmayı sağlayan yazılım türü"},{"w":"device driver","m":"aygıt sürücüsü"},{"w":"optical mouse","m":"optik fare, el hareketlerini izlemek için LED kullanan fare"},{"w":"comparison method","m":"karşılaştırma yöntemi, tamamlanmış benzer bir projeyle karşılaştırarak maliyet tahmin etme sistemi"},{"w":"out of","m":"... üzerinden, her y olası parçada x parça (x out of y)"},{"w":"reverse engineering","m":"tersine mühendislik, mevcut bir yazılım sistemini analiz etme ve daha yüksek bir soyutlama düzeyinde yeni bir versiyonunu oluşturma süreci"},{"w":"PC","m":"kişisel bilgisayar (personal computer), bireysel kullanım için tasarlanmış bilgisayar"},{"w":"peripheral","m":"çevre birimi, bilgisayara haricen bağlanan cihaz"},{"w":"percent","m":"yüzde, \"%\" sembolüyle gösterilen 100\u0027ün bir parçası"},{"w":"approach","m":"1) yaklaşım, bir şeyi ele alma veya ona bakma biçimi | 2) yaklaşım, bir şeyi yapma veya oluşturma yolu/stratejisi"},{"w":"permit","m":"izin vermek, müsaade etmek"},{"w":"computer","m":"bilgisayar"},{"w":"plus","m":"artı, iki sayının birbirine eklenmesi"},{"w":"DSSA","m":"Alana Özgü Yazılım Mimarisi (Domain-Specific Software Architecture)"},{"w":"power supply","m":"güç kaynağı, enerji sağlayan cihaz"},{"w":"code scavenging","m":"kod devşirme/kurtarma, mevcut sorunları çözüyorsa önceden yazılmış kodu yeniden kullanma süreci"},{"w":"program","m":"program, bilgisayarın veya başka bir elektronik cihazın işlemlerini kontrol eden kodlanmış yazılım seti"},{"w":"visual aid","m":"görsel materyal/yardımcı, konuşmacının fikirlerini desteklemek için tasarlanmış fiziksel gösterim"},{"w":"programming","m":"programlama, bilgisayar yazılımı yazma süreci"},{"w":"inter-modular attribute","m":"modüller arası nitelik, modüllerden oluşan tüm bir sistemin özelliği veya karakteristiği"},{"w":"programming language","m":"programlama dili, bilgisayar tarafından gerçekleştirilebilecek işlevleri ifade etmek için kullanılan yapay dil"},{"w":"SWAT team","m":"görev ve ilişki odaklılığa yoğunlaşan nispeten küçük uzman ekip"},{"w":"programming software","m":"programlama yazılımı, programcıların diğer programları oluşturmak, düzeltmek veya desteklemek için kullandığı uygulama"},{"w":"right-click","m":"sağ tıklamak"},{"w":"programming-in-the-small","m":"küçük ölçekli programlama, bireyleri veya küçük insan gruplarını içeren basit yazılım yazma yaklaşımı"},{"w":"destruction model","m":"yıkım modeli, yeni bir yazılımdaki uygulama kusurlarını tespit etmeyi amaçlayan yazılım testi türü"},{"w":"project","m":"(sesi) yansıtmak, duyurmak, uzaktaki insanların duyabileceği şekilde yüksek sesle konuşmak"},{"w":"threshold","m":"eşik, belirli bir tepkinin gerçekleşmesi için aşılması gereken sınır"},{"w":"reduce","m":"sadeleştirmek (kesir), bir kesri mümkün olan en küçük tam sayılarla ifade edilen biçime değiştirmek"},{"w":"body language","m":"beden dili"},{"w":"removal","m":"kaldırma, silme, bir şeyi bulunduğu yerden çıkarma/uzaklaştırma eylemi"},{"w":"system model","m":"sistem modeli, bileşenleri ve bağlayıcıları tarafından tanımlanan bir sistemin karakterizasyonunun açıklaması"},{"w":"rise","m":"artış, yükseliş, bir nitelik veya miktarda artma süreci"},{"w":"IEEE Standard for Quality Assurance Plans","m":"yazılım sistemlerinde kaliteyi test etmeye ve doğrulamaya yönelik IEEE Kalite Güvence Planları Standardı"},{"w":"run","m":"çalıştırmak (program), bilgisayarda bir programı kullanmak veya bir eylemi gerçekleştirmesini sağlamak"},{"w":"payroll","m":"maaş bordrosu"},{"w":"satellite navigation","m":"uydu navigasyonu, uydulardan bilgi alan bir harita kullanarak konum belirleme süreci"},{"w":"inadequate empty set property","m":"yetersiz boş küme özelliği, boş bir kümenin hiçbir program için yeterli bir test kümesi olmadığını belirten özellik"},{"w":"scroll wheel","m":"kaydırma tekerleği, fare üzerinde kullanıcının ekranı kaydırmasını sağlayan tekerlek"},{"w":"syntax level","m":"sözdizimi düzeyi, tüm kullanıcı ve sistem etkileşimlerini belirterek diyalog stilini tanımlayan iletişim bileşeni görünümü"},{"w":"security software","m":"güvenlik yazılımı, bilgisayarı virüsler ve yetkisiz erişim gibi tehditlerden korumak için tasarlanmış program"},{"w":"anti-virus software","m":"antivirüs yazılımı"},{"w":"select","m":"seçmek, belirli bir işlem için ekrandaki bir şeyi tuş vuruşları veya fare ile işaretlemek"},{"w":"object-oriented","m":"nesne yönelimli"},{"w":"server","m":"sunucu, birçok başka bilgisayar için hizmet sağlayan veya veri depolayan merkezi bilgisayar"},{"w":"online","m":"çevrimiçi, internete bağlı"},{"w":"simulation","m":"simülasyon, benzetim, çok gerçekçi olacak şekilde tasarlanmış bir şeyin temsili"},{"w":"calculus","m":"kalkülüs, değişim oranları ve gelişmiş ölçümlerle ilgilenen matematik dalı"},{"w":"spreadsheet","m":"elektronik tablo, bilgileri sütunlar ve satırlar halinde düzenleyen ve hesaplama yapmak için kullanılan program"},{"w":"black-box testing","m":"kara kutu testi, test kriterlerinin belirli bir yazılım için özel olarak geliştirildiği test tekniği"},{"w":"spyware","m":"casus yazılım, yetkisiz bir tarafa bildirmek amacıyla kullanıcı hakkında kişisel bilgileri kaydeden kötü amaçlı yazılım türü"},{"w":"base formula","m":"temel formül, yazılım boyutu ile harcanan çaba arasındaki ilişkiyi hesaplama formülü"},{"w":"summarize","m":"özetlemek, ana noktalarını kısaca sunmak"},{"w":"scanner","m":"tarayıcı"},{"w":"system software","m":"sistem yazılımı, kullanıcının bilgisayarı çalıştırmasını ve ek yazılımları yürütmesini sağlayan yazılım"},{"w":"functional decomposition","m":"işlevsel ayrıştırma, bir işlevin birtakım alt işlevlere bölündüğü tasarım felsefesi"},{"w":"trend","m":"eğilim, trend, tutarlı değişim veya gelişim"},{"w":"COTS","m":"ticari kullanıma hazır paket yazılım (commercial, off-the-shelf), orijinal halinden değiştirilmemiş hazır yazılım"},{"w":"virus","m":"virüs, bilgisayara zarar veren ve kendini kopyalayıp diğer makinelere yayılmak üzere tasarlanmış kötü amaçlı yazılım türü"},{"w":"add","m":"toplamak, eklemek"},{"w":"windowing system","m":"pencereleme sistemi, çalışan uygulamaların kolayca gezinilebilen görsel kutular halinde düzenlendiği kullanıcı arayüzü"},{"w":"goal-oriented","m":"hedef odaklı"},{"w":"word processing","m":"kelime işlem, metin belgeleri üretmek için metin girme ve düzenleme süreci"},{"w":"white-box reuse","m":"beyaz kutu yeniden kullanımı, yazılım öğelerinin yeni yazılıma dahil edilmeden önce değiştirildiği yeniden kullanım yöntemi"},{"w":"write","m":"yazmak, harfleri ve kelimeleri cümlelere veya komutlara dönüştürmek"},{"w":"denominator","m":"payda, kesir çizgisinin altındaki sayı"},{"w":"ability","m":"yetenek, beceri, bir şeyi yapabilme kabiliyeti"},{"w":"decompose","m":"ayrıştırmak, bir işlevi kendisini oluşturan alt işlevlere bölmek"},{"w":"abstraction","m":"soyutlama, geniş bir düzeyde ilgisiz ayrıntıları göz ardı eden genel sistem planı"},{"w":"HCI","m":"insan-bilgisayar etkileşimi (human-computer interaction)"},{"w":"address","m":"ele almak, ilgilenmek, bir şeye uygun eylem veya dikkat göstermek"},{"w":"presentation","m":"1) sunum, bir fikri bir gruba resmi olarak tanıtma veya gösterme süreci | 2) sunum/görünüm, ekran veya klavye düzeni gibi sistemin kullanıcı tarafından algılanabilir yönlerinin bütünü"},{"w":"analysis","m":"analiz, çözümleme, bir şeyin yapısı veya işlevselliği üzerine inceleme ve rapor"},{"w":"adaptive maintenance","m":"uyarlayıcı bakım, yazılımın işlevselliğini değiştirmeden donanım veya işletim sistemi yükseltmeleri gibi ortam değişikliklerine göre yazılımı güncelleme uygulaması"},{"w":"anticomposition property","m":"birleşim karşıtı özellik (anticomposition property), tek başına test edilen bileşenlerin bir bütün olarak birleştirildiğinde de test edilmesi gerektiğini belirten test yeterliliği özelliği"},{"w":"Seeheim model","m":"Seeheim modeli, uygulamayı kullanıcı arayüzünden ayıran yazılım tasarım modeli"},{"w":"antidecomposition property","m":"ayrıştırma karşıtı özellik (antidecomposition property), bir bütünün parçası olarak test edilen bileşenlerin tek başına da test edilmesi gerektiğini belirten test yeterliliği özelliği"},{"w":"quarantine","m":"karantinaya almak, virüsün yayılmasını önlemek için bir dosyayı diğerlerinden ayırmak"},{"w":"antiextensionality property","m":"kaplam karşıtı özellik (antiextensionality property), benzer isimlere veya işlevlere sahip olsalar bile programların farklı test türlerine ihtiyaç duyduğunu belirten test yeterliliği özelliği"},{"w":"system","m":"sistem, bir sonuç üretmek için birlikte çalışan bağlantılı öğeler kümesi"},{"w":"applicability property","m":"uygulanabilirlik özelliği, her program için yeterli bir test kümesinin var olduğunu belirten test yeterliliği özelliği"},{"w":"template","m":"şablon, tam bir programın tüm ayrıntılarına sahip olmayan iskelet bileşen"},{"w":"application","m":"uygulama, tatbik etme, bir şeyi işleme veya pratiğe dökme eylemi"},{"w":"develop","m":"geliştirmek"},{"w":"application framework","m":"uygulama çatısı/iskeleti, benzer sistemler ailesi arasındaki ilişkileri tanımlayan yarı mamul sistem"},{"w":"Fagan inspection","m":"Fagan denetimi, bir mühendis ekibinin yazılım kodunu manuel olarak incelediği süreç"},{"w":"bottom-up design","m":"aşağıdan yukarıya tasarım, mühendisin yazılımın en temel işlevlerinden başlayıp daha karmaşık işlevlere doğru ilerlediği tasarım yöntemi"},{"w":"user-centered design","m":"kullanıcı merkezli tasarım, son kullanıcı deneyimine büyük önem veren tasarım süreci"},{"w":"class diagram","m":"sınıf diyagramı, düğümler arasındaki ilişkileri modelleyen ve bir sistemin ayrıştırılmasını gösteren grafik"},{"w":"video editing","m":"video düzenleme, video kurgu"},{"w":"cohesion","m":"uyum, birliktelik (cohesion), bir sistemin modülleri arasındaki bağlantı ve bütünlük"},{"w":"network stage","m":"ağ aşaması, JSD\u0027de bir sistemin iletişim kuran süreçler ağı olarak gösterildiği aşama"},{"w":"commitment","m":"bağlılık, adanmışlık, bir şeye güçlü destek veya sadakat tutumu"},{"w":"integrity","m":"dürüstlük, bütünlük"},{"w":"compare","m":"karşılaştırmak, iki şey arasındaki benzerlikleri veya farklılıkları belirlemek"},{"w":"handout","m":"dinleyicilere dağıtılan sunum/bilgi notu, broşür"},{"w":"complexity property","m":"karmaşıklık özelliği, bir programın karmaşıklığının test kümelerinin gerektirdiği karmaşıklıkla doğrudan ilişkili olduğunu belirten test yeterliliği özelliği"},{"w":"team player","m":"takım oyuncusu"},{"w":"component","m":"bileşen, yazılım mimarisi yapılarında kullanılan hesaplama öğesi veya veri deposu"},{"w":"semantic level","m":"anlamsal düzey, sistem nesnelerini ve genel görev dağılımını tanımlayan kavramsal bileşen görünümü"},{"w":"conceptual view","m":"kavramsal görünüm, bir yazılım sistemini ana tasarım öğeleri ve aralarındaki etkileşimler açısından tanımlama yolu"},{"w":"compiler","m":"derleyici, üst düzey bir dilde yazılmış komutları çözen/çeviren program"},{"w":"consumption","m":"tüketim, belirli bir süre boyunca yok edilen/harcanan kapsamlı miktar"},{"w":"test criterion","m":"test kriteri/ölçütü, bir şeyin test edildiği belirlenmiş standart veya nitelik"},{"w":"control structure","m":"kontrol yapısı, bileşenlerin yürütülme sırasını gösteren ve dikte eden bileşen"},{"w":"generative","m":"üretken, bileşenleri yeni programlar üreten programlar oluşturmak için kullanılan"},{"w":"corrective maintenance","m":"düzeltici bakım, yazılım sistemlerindeki kusurları/hataları onarma uygulaması"},{"w":"note card","m":"konuşma/bilgi kartı"},{"w":"curious","m":"meraklı, bir şey hakkında daha fazlasını bilmek isteyen"},{"w":"top-down design","m":"yukarıdan aşağıya tasarım, ana kullanıcı işlevlerini tanımlayarak başlayıp temel işlemlere kadar alt işlevlere ayırma yöntemi"},{"w":"dedicated","m":"adanmış, özverili, bir görev veya amaç konusunda hevesli/kararlı"},{"w":"unethical","m":"etik olmayan, ahlaka aykırı"},{"w":"demonstration model","m":"gösterim modeli, yazılımın amaçlanan amacını karşıladığından emin olmayı sağlayan yazılım testi türü"},{"w":"test","m":"test etmek, denemek"},{"w":"design pattern","m":"tasarım deseni/kalıbı, sık karşılaşılan yazılım tasarım problemlerine uygulanabilen yeniden kullanılabilir çözüm"},{"w":"structure diagram","m":"yapı diyagramı, bir yapıdaki bileşik bileşenleri temsil eden diyagram"},{"w":"DFD","m":"veri akış diyagramı (Data Flow Diagram), verinin bir sistem içinde hareket ederken izlediği rotanın grafiksel temsili"},{"w":"realization problem","m":"gerçekleştirme problemi, yazılım gereksinimlerinin sabit olduğu ve ideal koşullar altında proje hedeflerine nasıl ulaşılacağına odaklanılan durum"},{"w":"elicitation","m":"ortaya çıkarma, bilgi toplama (gereksinim belirleme), bir şeyin görünür veya anlaşılır hale gelmesini sağlama süreci"},{"w":"wireless","m":"kablosuz"},{"w":"enhance","m":"geliştirmek, iyileştirmek, işlevini artırmak"},{"w":"fault-based testing","m":"kusur tabanlı test, öncelikle kusurları test etmeye odaklanan yazılım testi tekniği"},{"w":"evaluation model","m":"değerlendirme modeli, gereksinim, tasarım ve uygulama kusurlarını tespit etmeyi amaçlayan yazılım testi türü"},{"w":"change-oriented","m":"değişim odaklı, temel sürüme yapılan değişiklikleri tanımlayarak yeni yapılandırmaları belirleyen model"},{"w":"expertise","m":"uzmanlık, belirli bir konu veya alanda kapsamlı ve ileri düzey bilgi"},{"w":"workstation","m":"iş istasyonu, gelişmiş grafik tasarım gibi karmaşık görevleri işleyebilen güçlü bilgisayar"},{"w":"extensive quantity","m":"kapasite özelliği / kapsamlı miktar, bir sistemin boyutuna göre değişen ve ayrı, sayılabilir birimleri olan miktar"},{"w":"dynamic analysis","m":"dinamik analiz, bir programın çalıştırıldığı ve bu çalıştırmanın sonuçlarının incelendiği yazılım testi türü"},{"w":"failure","m":"arıza, başarısızlık, yazılımdaki bir kusurun gözlemlenebilir sonuçları"},{"w":"CLG","m":"komut dili grameri (command language grammar), bir bilgisayar sisteminin kullanıcı arayüzü yönlerini tanımlayan özel dilbilgisi yapısı"},{"w":"fault detection","m":"kusur tespiti, yazılımdaki kusurları bulma ve arızaları ortaya çıkarma süreci"},{"w":"equal","m":"eşit olmak"},{"w":"final","m":"son, nihai, bir sürecin veya zaman diliminin sonundaki durumla ilgili olan"},{"w":"error-based testing","m":"hata tabanlı test, insanlar tarafından yapılan yaygın hataları tespit eden yazılım testi tekniği"},{"w":"functional hierarchy","m":"işlevsel hiyerarşi, bir gereksinim belgesindeki spesifikasyonları düzenlemek için kullanılan tanımlanmamış sistem"},{"w":"manager","m":"yönetici, müdür"},{"w":"Fusion method","m":"Fusion yöntemi, süreci analiz, tasarım ve uygulama aşamaları halinde yapılandıran nesne yönelimli yazılım geliştirme süreci"},{"w":"folder","m":"klasör"},{"w":"generation","m":"üretim, oluşturma, belirli bir süre boyunca oluşturulan kapsamlı miktar"},{"w":"connector","m":"bağlayıcı, bileşenlerin nasıl etkileşime girdiğini belirleyen hesaplama öğesi"},{"w":"idealistic","m":"idealist, mümkün olan en iyi koşulları ve durumları varsayan"},{"w":"software reliability model","m":"yazılım güvenilirlik modeli, yazılım arızalarını tahmin etmeyi ve önlemeyi amaçlayan istatistiksel model"},{"w":"idiom","m":"deyim, kod kalıbı (idiom), bir programlama diline özgü olan ve temel bir işlevi gerçekleştirmek için kullanılabilen düşük seviyeli desen"},{"w":"office suite","m":"ofis paketi"},{"w":"implementation stage","m":"uygulama/gerçekleştirme aşaması, JSD\u0027de bir sistemin süreçler ağından çalışan bir tasarıma dönüştürüldüğü aşama"},{"w":"critical thinking","m":"eleştirel düşünme, gerçeklere ve kanıtlara dayanarak mantıklı sonuçlar çıkarma yeteneği"},{"w":"implementation view","m":"uygulama görünümü, bir yazılım sistemini paketlerin ve katmanların modülleri açısından tanımlama yolu"},{"w":"process scale","m":"süreç ölçeği, bir ürünün kod geliştirmeyi mi yoksa genel insan faaliyetlerini mi desteklediğini belirten özellik"},{"w":"implicit invocation","m":"örtük çağrı (implicit invocation), hesaplamaların kullanıcı etkileşimi yerine belirli olaylar tarafından tetiklendiği sistem"},{"w":"text editor","m":"metin düzenleyici"},{"w":"information hiding","m":"bilgi gizleme, programın bölümlerini kapsamlı değişikliklerden korumak için modüllerin değişmesi muhtemel olmayan bilgileri içerdiği sistem"},{"w":"call graph","m":"çağrı grafiği, bir yazılım tasarım sürecinin sonucunu gösteren grafik"},{"w":"innovative","m":"yenilikçi, yeni, yaratıcı ve ileri düzey"},{"w":"workflow","m":"iş akışı, bir şeyin tamamlanmaya ulaşması için geçmesi gereken süreçler dizisi"},{"w":"input","m":"girdi, belirli bir süre boyunca bir sisteme eklenen mevcut kapsamlı miktar"},{"w":"operate","m":"çalışmak, işletim sistemlerinin veya diğer yazılımların özelliklerine göre belirli bir şekilde işlev görmek"},{"w":"insufficient","m":"yetersiz, belirli bir amaç için uygun veya yeterince güçlü olmayan"},{"w":"attribute","m":"nitelik, öznitelik, bir şeyin temel özelliği"},{"w":"intensive quantity","m":"yoğunluk özelliği / yoğun miktar, sistemin boyutuna göre değişmeyen, ölçülebilen ancak ayrı sayılabilir birimlere ayrılamayan miktar"},{"w":"algorithmic model","m":"algoritmik model, zamanı, çabayı veya maliyeti tahmin etmek için belirli bir formül kullanan sistem"},{"w":"interaction diagram","m":"etkileşim diyagramı, tipik bir grafiği oluşturan mesajların sırasını gösteren grafik"},{"w":"review","m":"gözden geçirmek, incelemek"},{"w":"intra-modular attribute","m":"modül içi nitelik, tek bir bireysel modülün özelliği veya karakteristiği"},{"w":"problem identification","m":"problem tanımlama/belirleme, problem çözme sürecinin ilk aşamasında problemleri tanımlama ve analiz etme eylemi"},{"w":"iteration","m":"yineleme, iterasyon, bir donanım veya yazılım parçasının yeni veya güncellenmiş sürümü"},{"w":"domain analysis","m":"alan analizi, yazılım geliştirme için bilgileri tanımlayan, yakalayan, yapılandıran ve yeniden düzenleyen süreç"},{"w":"JSP","m":"Jackson Yapısal Programlama (Jackson Structured Programming), veri akışı ve program yapısına dayalı sistem geliştirme yöntemi"},{"w":"bioinformatics","m":"biyoinformatik, bilgisayar yazılımlarının biyoloji alanına uygulanması"},{"w":"law of continuing change","m":"sürekli değişim yasası, kullanımdaki bir sistemin yeniden yapılandırılması daha düşük maliyetli olana kadar sürekli değişime uğraması gerektiğini belirten ilke"},{"w":"focus","m":"odaklanmak, tüm dikkatini vermek"},{"w":"law of increasing complexity","m":"artan karmaşıklık yasası, bir yapının kendisine yapılan her değişiklikle daha karmaşık hale geldiğini belirten ilke"},{"w":"software reuse","m":"yazılımın yeniden kullanımı, mevcut yazılımdaki değiştirilmiş veya değiştirilmemiş kaynak kodu parçalarını yeni yazılım oluşturmaya dahil etme uygulaması"},{"w":"layered","m":"katmanlı, artan işlevselliğe göre organize edilmiş mimari stil"},{"w":"steady","m":"istikrarlı, sabit, düzenli"},{"w":"logical","m":"mantıksal, mantıklı, kanıt ve akla dayalı olan"},{"w":"deployment view","m":"dağıtım görünümü, bir yazılım sistemini görevleri fiziksel düğümlere atama biçimi açısından tanımlama yolu"},{"w":"main program with subroutines","m":"alt yordamlara sahip ana program, üst düzey bir modülün diğer modülleri belirli bir sırayla çağırdığı hiyerarşik sistem"},{"w":"resource certainty","m":"kaynak kesinliği, bir projede çalışacak nitelikli insanlar gibi kaynakların mevcudiyeti ile belirlenen metrik"},{"w":"market-driven","m":"pazar odaklı, belirli bir ihtiyaçtan ziyade geniş bir amaç için geliştirilen yazılım"},{"w":"decrease","m":"azalmak, küçülmek"},{"w":"mode","m":"mod, kip, yazılımın nasıl davranacağını dikte eden değiştirilebilir çalışma sistemi"},{"w":"coverage-based testing","m":"kapsam tabanlı test, bir testin yeterliliğinin incelenen yazılım yüzdesi ile belirlendiği yazılım testi modeli"},{"w":"modeling stage","m":"modelleme aşaması, JSD\u0027de yazılımın çözmesi gereken problemin tanımının yapıldığı aşama"},{"w":"technique","m":"teknik, bir şeyi yapma veya oluşturma becerisi ya da özel yöntemi"},{"w":"modernize","m":"modernize etmek, çağdaşlaştırmak, yeni teknolojiyle uyumlu hale getirmek veya görünümünü ve işlevselliğini güncellemek"},{"w":"signpost","m":"yönlendirici ifadeler kullanmak, dinleyicilere net yönlendirici kelimelerle fikirler dizisi boyunca rehberlik etmek"},{"w":"modularity","m":"modülerlik, bir sistemi daha küçük ve birbirine bağlı sistemler dizisi olarak görme biçimi"},{"w":"pipes and filters","m":"borular ve filtreler, sıralı verileri işlemek için girdi akışlarına ve sistem işlemlerine dayanan mimari stil"},{"w":"module","m":"modül, bir araya getirilmiş yazılım işlevleri grubu"},{"w":"task directedness","m":"görev odaklılık, başarılması gereken görevlere ve bu görevleri başarma yöntemlerine odaklanan yönetim tarzı"},{"w":"object","m":"nesne, dokunulabilen ve görülebilen fiziksel şey (veya yazılım nesnesi)"},{"w":"software","m":"yazılım"},{"w":"OMT","m":"Nesne Modelleme Tekniği (Object Modeling Technique), yazılım geliştirmeye yönelik nesne yönelimli yaklaşım"},{"w":"output","m":"çıktı, belirli bir süre boyunca bir sistemden çıkarılan ancak yok edilmeyen kapsamlı miktar"},{"w":"end user","m":"son kullanıcı"},{"w":"outside the box","m":"kalıpların dışında, alışılmışın dışında yaratıcı veya sıra dışı fikirlere sahip olma (think outside the box)"},{"w":"computer architecture","m":"bilgisayar mimarisi, bilgisayarların donanım bileşenlerinden oluşan fiziksel yapılandırması"},{"w":"perfective maintenance","m":"mükemmelleştirici bakım, yeni kullanıcı gereksinimlerini karşılamak amacıyla yazılımı güncelleme uygulaması"},{"w":"white-box testing","m":"beyaz kutu testi, yazılımın iç mantıksal yapısını inceleyen yazılım testi tekniği"},{"w":"philosophy","m":"felsefe, bir şeyi anlama veya görme biçimi"},{"w":"user scale","m":"kullanıcı ölçeği, bir ürünün destekleyebileceği kullanıcı sayısını ölçen sistem"},{"w":"prevention model","m":"önleme modeli, tasarım, gereksinim ve uygulamadaki kusurları önlemeyi amaçlayan yazılım testi türü"},{"w":"manually","m":"manuel olarak, elle"},{"w":"preventive maintenance","m":"önleyici bakım, bakımını kolaylaştırmak amacıyla bir sistemin yapısını iyileştirme uygulaması"},{"w":"Booch method","m":"Booch yöntemi, nesne yönelimli yazılım geliştirmede kullanılan bir yazılım modelleme dili ve süreci"},{"w":"primitive","m":"ilkel, basit, temel"},{"w":"health","m":"sağlık, fiziksel, zihinsel ve sosyal açıdan iyi olma hali"},{"w":"problem solving","m":"problem çözme, sorunları tanımlama, çözümler düşünme ve bu çözümleri hayata geçirme yeteneği"},{"w":"fraction","m":"kesir"},{"w":"procedure","m":"prosedür, yordam, bir şeyin nasıl yapılacağını dikte eden yerleşik eylemler dizisi"},{"w":"closed system","m":"kapalı sistem, kütle kazanmayan veya kaybetmeyen sistem"},{"w":"process view","m":"süreç görünümü, bir yazılım sistemini gerçekleştirdiği görevler ve süreçler ile bunların etkileşim biçimi açısından tanımlama yolu"},{"w":"tester","m":"test uzmanı, ürünlerin ne kadar iyi çalıştığını belirlemek için onları kullanan profesyonel"},{"w":"programming plan","m":"programlama planı, yaygın bir eylemi tanımlamak için kullanılan program parçası"},{"w":"hardware","m":"donanım, bilgisayarın fiziksel bileşenleri"},{"w":"proof of correctness","m":"doğruluk kanıtı, bir programın spesifikasyonunu resmi olarak belirten ve programın bu spesifikasyonu karşıladığını kanıtlayan süreç"},{"w":"iterative","m":"yinelemeli, iteratif, iyileştirmek veya mükemmelleştirmek amacıyla güncellenmesi amaçlanan"},{"w":"property","m":"özellik, nitelik, tek bir varlığa veya varlıklar arasındaki ilişkiye uygulanabilen tanımlayıcı karakteristik"},{"w":"back-end","m":"arka uç, kullanıcılar tarafından değil yalnızca geliştiriciler tarafından erişilen"},{"w":"rational","m":"rasyonel, akılcı, mantıksal bir sisteme göre çalışan"},{"w":"abstract data type","m":"soyut veri tipi, orijinal verinin yapısıyla eşleşen ve sistem bileşenleri kendilerini koruyacak şekilde tasarlanmış yazılım yapısı"},{"w":"redefine","m":"yeniden tanımlamak, işlevini veya anlamını değiştirmek"},{"w":"TQM","m":"toplam kalite yönetimi (total quality management), bir sürecin her adımında mükemmellik arayışı"},{"w":"redocumentation","m":"yeniden belgelendirme, işlevini veya soyutlama düzeyini değiştirmeden bir programın kodunu iyileştirme veya basitleştirme süreci"},{"w":"web browser","m":"web tarayıcısı"},{"w":"reengineering","m":"yeniden mühendislik (renovasyon olarak da bilinir), bir sistemde işlevsel değişiklikler yapma süreci"},{"w":"customer-driven","m":"müşteri odaklı, potansiyel müşterilerin net ve özel bir ihtiyacına yanıt olarak geliştirilen"},{"w":"relationship","m":"ilişki, iki varlığın etkileşim biçimine bağlı olan özellik"},{"w":"dialog","m":"diyalog, bilgisayar ile kullanıcı arasındaki karşılıklı iletişim"},{"w":"renovation","m":"yenileme, renovasyon (yeniden mühendislik olarak da bilinir), bir sistemde işlevsel değişiklikler yapma süreci"},{"w":"port","m":"port, bağlantı noktası"},{"w":"repository","m":"veri havuzu, depo (repository), kendine özgü bir yapıya sahip veri bütünü yöneten sistemler için tasarlanmış mimari stil"},{"w":"software architecture","m":"yazılım mimarisi, sistemleri ana bileşenleri açısından görme ve bu bileşenler arasındaki etkileşimi karakterize etme uygulaması"},{"w":"requirements engineering","m":"gereksinim mühendisliği, yazılım ve diğer bilgisayar sistemleri için gereksinimleri oluşturma ve belgelendirme uygulaması"},{"w":"critical path","m":"kritik yol, tüm projenin başarılı olması için hangi görevlerin zamanında tamamlanması gerektiğini belirten PERT şeması bölümü"},{"w":"response","m":"yanıt, tepki, arama veya istek üzerine yazılım tarafından sağlanan bilgi"},{"w":"desktop publishing","m":"masaüstü yayıncılık"},{"w":"restructuring","m":"yeniden yapılandırma, aynı işlevselliği ve soyutlama düzeyini korurken bir sistemi güncelleme süreci"},{"w":"fault prevention","m":"kusur önleme, geliştirme aşamasında yazılımı defalarca test ederek sorunları öngörme ve durdurma süreci"},{"w":"satisfy","m":"karşılamak, tatmin etmek (gereksinim), gerekli görevleri tamamlamak veya beklentilerin tümünü yerine getirmek"},{"w":"key practice","m":"anahtar uygulama, CMM\u0027nin anahtar süreç alanlarını hayata geçiren faaliyet"},{"w":"scenario-based evaluation","m":"senaryo tabanlı değerlendirme, yükleme ve kullanım senaryolarının simülasyonlarıyla yönlendirilen yazılım testi modeli"},{"w":"heat sink","m":"ısı emici, soğutucu blok, ısıyı havaya aktaran elektronik bileşen"},{"w":"schematic logic","m":"şematik mantık, bir yapı diyagramında kullanılan kod"},{"w":"stopping rule","m":"durdurma kuralı, bir problemin çözümüne ulaşıldığının göstergesi"},{"w":"sequence diagram","m":"sıralama diyagramı, bir etkileşim içindeki olayların zaman sırasını gösteren grafik"},{"w":"incorporate","m":"dahil etmek, bir bütünün parçası olarak katmak"},{"w":"simplify","m":"basitleştirmek, sadeleştirmek, gereksiz unsurları ortadan kaldırmak"},{"w":"times","m":"çarpı, kere"},{"w":"software maintenance","m":"yazılım bakımı, kusurları düzeltmek veya performansı artırmak için bir yazılım sistemini uyarlama veya değiştirme süreci"},{"w":"SD","m":"Yapısal Tasarım (Structured Design), optimal bir modül yapısı oluşturma amacıyla modüllerin ve modül hiyerarşilerinin geliştirilmesi"},{"w":"solution","m":"çözüm, bir problemi çözme veya düzeltme yolu"},{"w":"bandwidth","m":"bant genişliği, bir bilgisayar sisteminin ağ üzerinden bilgi gönderme ve alma kapasitesinin ölçüsü"},{"w":"specification","m":"spesifikasyon, şartname, bir problemin kesin tanımı veya açıklaması"},{"w":"source code editor","m":"kaynak kodu düzenleyicisi"},{"w":"statement coverage property","m":"ifade kapsamı özelliği, bir programın olası her eyleminin test kümeleri tarafından yürütülmesi gerektiğini belirten test yeterliliği özelliği"},{"w":"design method","m":"tasarım yöntemi, bir yazılım sistemini tasarlamak için yönergeler ve prosedürler kümesi"},{"w":"static analysis","m":"statik analiz, bir programın yapısının ve bileşenlerinin çalıştırılmadan incelendiği yazılım testi türü"},{"w":"intermediate product","m":"ara ürün, daha karmaşık bir uygulamanın geliştirilmesinde kullanılmaya hazır kod parçası"},{"w":"stepwise abstraction","m":"adım adım soyutlama, en ilkelden en soyuta kadar tüm kodun incelendiği yazılım analiz tekniği"},{"w":"open","m":"açmak, bir dosyanın veya programın içeriğini görüntülemek"},{"w":"structure chart","m":"yapı şeması/tablosu, bir sistemin işlevlerini en karmaşıktan en ilkele doğru gösteren şema"},{"w":"expected","m":"beklenen, gerçekleşmesi muhtemel görülen"},{"w":"subfunction","m":"alt işlev, bir işlevi oluşturmak için diğer alt işlevlerle birleşen bileşen"},{"w":"ACM","m":"Bilgisayar Makineleri Derneği (Association for Computing Machinery)"},{"w":"synthesis","m":"sentez, bileşim, birden fazla öğenin veya unsurun birleşimi"},{"w":"processor","m":"işlemci"},{"w":"system structure","m":"sistem yapısı, bir sistemin modüllerinin oluşumu ve birbirine nasıl bağlandığı"},{"w":"design recovery","m":"tasarım kurtarma, işlev olarak mevcut bir programa benzeyen ancak soyutlama açısından daha iyi organize edilmiş bir program oluşturma süreci"},{"w":"test adequacy criteria","m":"test yeterliliği kriterleri, bir yazılım test sürecinin etkinliğini ölçen gereksinimler kümesi"},{"w":"robust programming","m":"sağlam/dayanıklı programlama, yazılım bileşenlerinin bağlamlarından bağımsız olarak doğru çalışmasını sağlama uygulaması"},{"w":"universal accounting equation","m":"evrensel muhasebe denklemi, belirli zaman dilimleri boyunca kapsamlı miktarlardaki değişiklikleri ölçmek için kullanılan denklem"},{"w":"computer engineering","m":"bilgisayar mühendisliği"},{"w":"unstructured code","m":"yapılandırılmamış kod, kötü tasarlanmış veya net bir yapı/düzen olmadan kodlanmış sistem kodu"},{"w":"revamping","m":"arayüz yenileme, programın yapısını değiştirmeden kullanıcı arayüzünü güncelleme süreci"},{"w":"user class","m":"kullanıcı sınıfı, yazılımın işlevini belirli bir kullanıcıya göre değiştiren ayrım"},{"w":"N-version programming","m":"N-versiyon programlama, aynı başlangıç spesifikasyonlarından işlevsel olarak eşdeğer birden fazla programın üretildiği yazılım hata toleransı tekniği"},{"w":"validation","m":"geçerleme, doğrulama (validation), bir problemin gereksinimlerinin doğru olduğunu belirleme süreci"},{"w":"stabilize","m":"istikrar kazanmak, dengelenmek"},{"w":"web-based","m":"web tabanlı, internet üzerinde kullanılan"},{"w":"JSD","m":"Jackson Sistem Geliştirme (Jackson System Development), geliştirme sürecinde üç ayrı aşama içeren sistem geliştirme yöntemi"},{"w":"wicked problem","m":"çetin/karmaşık problem (wicked problem), yazılım tasarımında karşılaşılan, hem karmaşık bir nedeni hem de karmaşık bir çözümü olan ve başka bir problemin sonucu olabilen problem"},{"w":"freelancer","m":"serbest çalışan, geçici personel olarak veya iş bazında kiralanan çalışan"},{"w":"ad hoc","m":"amaca özel, plansız/geçici (ad hoc), sistematik olmayan ve yalnızca tek bir özel durum için yapılan"},{"w":"numerator","m":"pay, kesir çizgisinin üzerindeki sayı"},{"w":"adequate","m":"yeterli, kabul edilebilir düzeyde olan"},{"w":"state diagram","m":"durum diyagramı, tekil nesnelerin dinamik davranışını gösteren grafik"},{"w":"ADL","m":"mimari tanımlama dili (architecture description language), bir yazılım sisteminin mimari yapılandırmasını resmi olarak tanımlayan sistem"},{"w":"groupware","m":"grup yazılımı, bir grup insanın ortak bir hedefe ulaşmasına veya işbirliğine dayalı bir görevi tamamlamasına yardımcı olmak için tasarlanmış yazılım"},{"w":"advance","m":"ilerletmek, terfi ettirmek, bir şeyin daha yüksek bir statüye ulaşmasını sağlamak"},{"w":"circuit analysis","m":"devre analizi, elektrik bileşenlerinin akımları nasıl ilettiğinin incelenmesi"},{"w":"analyst","m":"analist, çözümleyici, genellikle iyileştirme yollarını belirlemek amacıyla bir şeyi izleyen veya inceleyen profesyonel"},{"w":"monotonicity property","m":"monotonluk özelliği, bir program yeterince test edildikten sonra bile ek testlerin yapılabileceğini belirten test yeterliliği özelliği"},{"w":"application generator","m":"uygulama üreteci, mühendislerin büyük ölçekte programlar yazmasına yardımcı olan araç"},{"w":"CCB","m":"yapılandırma kontrol kurulu (configuration control board), temel sürüme yapılan değişikliklerin onaylanmasını ve doğru tamamlanmasını sağlayan ekip"},{"w":"approve","m":"onaylamak, tatmin edici bularak resmi olarak kabul etmek"},{"w":"firewall","m":"güvenlik duvarı"},{"w":"architect","m":"mimar (donanım/sistem mimarı), donanım tasarlayan ve oluşturan profesyonel"},{"w":"non-exhausting applicability property","m":"tüketici olmayan uygulanabilirlik özelliği, bir kriterin her koşulda kapsamlı/tüketici test gerektirmediğini belirten test yeterliliği özelliği"},{"w":"artistic design","m":"sanatsal tasarım, kullanıcının dikkatini arayüzün önemli bölümlerine çekmek için grafik tasarım kullanma uygulaması"},{"w":"usage","m":"kullanım, bir şeyin kullanılma biçimi"},{"w":"AWB","m":"analist çalışma tezgahı (analyst workbench), bir projenin erken yazılım geliştirme aşamalarını destekleyen tümleşik ortam"},{"w":"install","m":"kurmak, yüklemek"},{"w":"baseline","m":"temel çizgi, referans sürüm (baseline), bir şeyin geliştirilmesi için temel oluşturan yerleşik spesifikasyonlar kümesi"},{"w":"fault","m":"kusur, arıza, bir mühendis tarafından yapılan hatanın sonucu"},{"w":"best interests","m":"en yüksek çıkar/yarar, belirli bir kişi veya grup için en avantajlı olan koşullar"},{"w":"version-oriented","m":"sürüm odaklı, yeni yapılandırmaları doğrusal bir numaralandırma sistemiyle tanımlayan geliştirme modeli"},{"w":"BM","m":"temel yürütme zamanı modeli (basic execution time model), arıza yoğunluğundaki azalmanın sabit olduğu yazılım güvenilirlik modeli"},{"w":"digital assistant","m":"dijital asistan, genellikle cep telefonu olarak da çalışan küçük el bilgisayarı (PDA)"},{"w":"browser","m":"tarayıcı, internetteki bilgilere erişmek için kullanılan yazılım sistemi"},{"w":"initial","m":"başlangıçtaki, ilk, bir sürecin veya zaman diliminin başındaki durumla ilgili olan"},{"w":"budget","m":"bütçe, bir projenin tahmini ve ayrılmış maliyeti"},{"w":"product","m":"ürün, satın alınabilir şey"},{"w":"CASE","m":"Bilgisayar Destekli Yazılım Mühendisliği (Computer Aided Software Engineering), yazılım geliştirme sürecinde çeşitli destek sistemlerinin uygulanması"},{"w":"percentage","m":"yüzde oranı, 100 birim üzerinden ölçülen gerçekleşme oranı"},{"w":"change request","m":"değişiklik talebi, bir projenin temel sürümüne (baseline) yapılması önerilen ayarlama veya düzeltme"},{"w":"release","m":"yayın, sürüm, mevcut bir yazılım programının güncellenmiş versiyonu"},{"w":"chief programmer team","m":"baş programcı ekibi, en fazla sorumluluğa sahip kişinin projenin baş programcısı olarak atandığı üç kişilik ekip"},{"w":"process certainty","m":"süreç kesinliği, yazılımın geliştirme aşaması ve değiştirilip değiştirilemeyeceği ile belirlenen metrik"},{"w":"city","m":"şehir ölçeği (city), kullanıcı ölçeğinde bir ürünün bir aileden (family) daha büyük bir sistemin geliştirilmesini desteklediğini gösteren değer"},{"w":"subtract","m":"çıkarmak, eksiltmek"},{"w":"cloud computing","m":"bulut bilişim, kaynakların yerel olarak kullanılmak yerine ağ üzerinden paylaşıldığı ve bilişimin bir ürün yerine hizmet olarak sunulduğu model"},{"w":"SA","m":"Yapısal Analiz (Structured Analysis), gerçek hayat gereksinimlerini belirli bir ihtiyacı karşılayacak yazılıma dönüştürme yöntemi"},{"w":"CMM","m":"Yetenek Olgunluk Modeli (Capability Maturity Model), geliştirme sürecini iyileştirmeyi amaçlayan yönergeler kümesi"},{"w":"user interface","m":"kullanıcı arayüzü, kullanıcının bir sistemle etkileşim kurma biçimini yöneten nitelikler bütünü"},{"w":"COCOMO","m":"Yapıcı Maliyet Modeli (Constructive Cost Model), üç proje sınıfı arasında ayrım yapan maliyet tahmin modeli"},{"w":"tablet","m":"tablet bilgisayar"},{"w":"cognitive view","m":"bilişsel görünüm, bir kullanıcının sistemi çalıştırmak için sistem hakkında neyi anlaması gerektiğini dikkate alan sistem anlama aracı"},{"w":"repair","m":"onarmak, tamir etmek"},{"w":"common feature","m":"ortak özellik, CMM\u0027nin anahtar uygulamalarının beş bölümünden biri"},{"w":"relation directedness","m":"ilişki odaklılık, bireysel çalışanlara ve onların diğer çalışanlarla ilişkilerine odaklanan yönetim tarzı"},{"w":"communication component","m":"iletişim bileşeni, sistemler ve kullanıcılar arasındaki diyalogla ilgilenen sistem görünümü"},{"w":"over","m":"bölü, bir sayının başka bir sayıya bölünmesi"},{"w":"compositional","m":"bileşimsel (compositional), mevcut bileşenleri yeni sistemlerde kolayca yeniden kullanılabilen teknoloji"},{"w":"computing platform","m":"bilgi işlem platformu, belirli bir uygulama türünün çalışmasına izin veren donanım ve sistem yazılımı kombinasyonu"},{"w":"conceptual component","m":"kavramsal bileşen, sistemin kullanıcılar için gerçekleştireceği işlevlerle ilgilenen sistem görünümü"},{"w":"conceptual model","m":"kavramsal model, bir sistemin kullanıcı eylemlerine verdiği tepkiler açısından sunulan teknik olarak doğru bilgisayar sistemi modeli"},{"w":"configuration item","m":"yapılandırma öğesi, yapılandırma yönetimine yardımcı olan ve temel sürümde (baseline) yer alan donanım veya yazılım parçası"},{"w":"configuration management","m":"yapılandırma yönetimi, yazılım geliştirme süreci boyunca öğelerin oluşturulmasını ve güncellenmesini sistematik olarak izleme uygulaması"},{"w":"conform to","m":"uymak, riayet etmek, standartlarını veya kurallarını takip etmek"},{"w":"contractor","m":"yüklenici, müteahhit, sözleşmeli çalışan, uzun veya kısa vadeli olabilen belirli bir işi sözleşme kapsamında yapmak üzere kiralanan bağımsız çalışan"},{"w":"corresponding","m":"karşılık gelen, ilgili, birbirleriyle ilişkili olan veya aynı konulara atıflar içeren"},{"w":"deceptive","m":"aldatıcı, yanıltıcı veya dürüst olmayan"},{"w":"defensive programming","m":"savunmacı programlama, bileşenlerin çeşitli bağlamlarda düzgün çalışmasını sağlayarak güvenilir yazılım oluşturma uygulaması"},{"w":"Delphi-method","m":"Delphi yöntemi, bir uzmanlar panelinin maliyetleri ayrı ayrı tahmin ettiği ve bir anlaşmaya varana kadar tahminlerini tartıştığı maliyet tahmin yöntemi"},{"w":"delta","m":"delta, fark, bir yazılımın bir sürümü ile aynı yazılımın bir sonraki sürümü arasındaki fark"},{"w":"design problem","m":"tasarım problemi, projeyi yürütme adımlarının bilinmediği ve odak noktasının sorumlulukları atamak ve bireysel kilometre taşlarını başarmak olduğu durum"},{"w":"design view","m":"tasarım görünümü, kullanıcı arayüzü tasarımına odaklanan kavramsal model"},{"w":"developer","m":"geliştirici, yazılımcı, yazılım tasarlayan ve oluşturan profesyonel"},{"w":"development time","m":"geliştirme süresi, gereksinim mühendisliği aşamasının başlangıcı ile yazılımın müşteriye teslim edildiği an arasındaki süre"},{"w":"distribution","m":"dağıtım, bir ürün veya hizmeti tedarik etme/sunma eylemi"},{"w":"educator","m":"eğitimci, eğitmen, başkalarına bir şey hakkında eğitim veren profesyonel"},{"w":"ensure","m":"garantiye almak, sağlamak, bir şeyin gerçekleşeceğinden emin olmak"},{"w":"environment","m":"ortam, geliştirme ortamı, tüm yazılım geliştirme sürecini destekleyen uygulama"},{"w":"estimate","m":"tahmin etmek, bitmeden önce olası miktarını veya maliyetini belirlemeye çalışmak"},{"w":"ethics","m":"etik, ahlak kuralları, bir bireyin veya grubun eylemlerini yöneten ahlaki ilkeler bütünü"},{"w":"exception domain","m":"istisna alanı (exception domain), bir yazılım bileşenine yapılan yanlış girdiler kümesi"},{"w":"expected exception domain","m":"beklenen istisna alanı, yazılım tarafından öngörülen ve tanınan yanlış girdi kümesi"},{"w":"exploration problem","m":"keşif problemi, projenin kesinlik derecesinin düşük olduğu ve odak noktasının belirtilmemiş hedeflere ulaşmak olduğu zorlu durum"},{"w":"family","m":"aile ölçeği (family), kullanıcı ölçeğinde bir ürünün geliştiriciler arasındaki etkileşimleri kolaylaştırmak için tasarlandığını gösteren değer"},{"w":"fault-tolerant","m":"hata toleranslı, yazılım arızası durumunda yedek veri içeren (disk veya sistem)"},{"w":"flaw","m":"kusur, hata veya zayıflık"},{"w":"functionality","m":"işlevsellik, bir bilgisayar veya yazılım sisteminin gerçekleştirebileceği işlemler yelpazesi"},{"w":"Gantt chart","m":"Gantt şeması, projenin zaman çizelgesini detaylandırmak için çubuklar kullanan grafik türü"},{"w":"hierarchical organization","m":"hiyerarşik organizasyon, farklı yönetim seviyelerinin ayırt edildiği ekip organizasyon tarzı"},{"w":"humanities","m":"beşeri bilimler, insanların nasıl algıladığı, öğrendiği, düşündüğü ve hissettiği üzerine çalışma alanı"},{"w":"IEEE","m":"Elektrik ve Elektronik Mühendisleri Enstitüsü (Institute of Electrical and Electronics Engineers)"},{"w":"improve","m":"iyileştirmek, geliştirmek, daha iyi hale getirmek"},{"w":"individual","m":"bireysel ölçek (individual), kullanıcı ölçeğinde bir ürünün bireysel geliştiriciler tarafından yazılım inşasına yardımcı olmak üzere tasarlandığını gösteren değer"},{"w":"instantiate","m":"somutlaştırmak, örneklemek (instantiate), bir şeyi tamamlamak veya ona somut içerik/öz kazandırmak"},{"w":"integrated environment","m":"tümleşik ortam, nihai bir ürünün spesifikasyonlarını içeren geliştirme ortamı"},{"w":"integration style","m":"bütünleştirme/entegrasyon tarzı, gayriresmi karar alma özelliği taşıyan ve çalışanların yaratıcılığını teşvik eden yönetim tarzı"},{"w":"IPSE","m":"Tümleşik Proje Destek Ortamı (Integrated Project Support Environment), yazılım geliştirme sürecinin tüm aşamalarını destekleyen araçlar içeren uygulama"},{"w":"ISO 9001","m":"bir yazılım sisteminin kalitesi için genel gereksinimleri belirten standartlar kümesi (ISO 9001)"},{"w":"key process area","m":"anahtar süreç alanı, CMM tarafından belirlenen belirli bir olgunluk seviyesine ulaşmak için ele alınması gereken konuların göstergesi"},{"w":"keystroke level","m":"tuş vuruşu düzeyi, tuş vuruşları veya fare tıklamaları gibi kullanıcının fiziksel eylemlerini tanımlayan iletişim bileşeni görünümü"},{"w":"KLOC","m":"bin satır kod (kilo lines of code), bir bilgisayar programının boyutunun sahip olduğu kaynak kodu satır sayısına göre ölçümü"},{"w":"language-centered environment","m":"dil merkezli ortam (programlama ortamı olarak da bilinir), belirli bir programlama dilinde geliştirme yapmak için araçlar içeren etkileşimli geliştirme ortamı"},{"w":"learning effect","m":"öğrenme etkisi, bir proje devam ettikçe verimlilik oranının arttığını savunan teori"},{"w":"linguistic view","m":"dilbilimsel görünüm, bir insan ve bir sistem arasındaki etkileşimleri tanımlayan kavramsal model"},{"w":"LPM","m":"logaritmik Poisson yürütme zamanı modeli (logarithmic Poisson execution time model), arıza yoğunluğundaki azalmanın üstel olduğu yazılım güvenilirlik modeli"},{"w":"man-month","m":"adam-ay, bir çalışanın belirli bir ayda gerçekleştirdiği iş miktarının tahmini ölçüsü"},{"w":"material component","m":"materyal bileşeni, kullanıcı arayüzünün grafikleri ve kullanıcının etkileşime gireceği donanımla ilgilenen sistem görünümü"},{"w":"matrix organization","m":"matris organizasyon, çalışanların uzmanlık alanlarına göre birimler halinde organize edildiği ekip organizasyon tarzı"},{"w":"maturity level","m":"olgunluk seviyesi, bir yazılım sürecinin belirli bir kalite standardına ulaşma yolundaki ilerlemesinin ölçüsü"},{"w":"membership","m":"üyelik, bir kişinin bir grubun veya kuruluşun parçası olduğunu gösteren resmi statü"},{"w":"mental model","m":"zihinsel model, bir kullanıcının bir bilgisayar sistemine ilişkin anlayışı"},{"w":"metered fee","m":"kullanıma dayalı ücret / sayaçlı ücret, müşterinin potansiyel olarak sınırsız bir kaynaktan yalnızca fiilen kullandığı hizmetler için yaptığı ödeme"},{"w":"middleware","m":"ara katman yazılımı, bilgisayarın işletim sistemini bireysel uygulamalara bağlayan ve programların birlikte sorunsuz çalışmasını sağlayan yazılım"},{"w":"MIL","m":"Modül Ara Bağlantı Dili (Module Interconnection Language), bir yazılım sisteminin genel yapısının resmi tanımı"},{"w":"MVC paradigm","m":"Model-Görünüm-Denetleyici paradigması (model-view-controller), uygulamayı model, görünüm ve denetleyici olmak üzere üç alana bölen kullanıcı arayüzü tasarım deseni"},{"w":"MWB","m":"yönetim çalışma tezgahı (management workbench), bir yazılım geliştirme projesinin planlanması ve kontrolü için araçlar içeren programlama ortamı"},{"w":"open structured team","m":"açık yapılı ekip, açık bir yönetim tarzını karar alma için net yönergelerle birleştiren ekip organizasyon tarzı"},{"w":"optimistic","m":"iyimser, mümkün olan en iyi senaryoları ve en düşük olası maliyetleri varsayan"},{"w":"PaaS","m":"Hizmet Olarak Platform (Platform as a Service), bilgisayar donanımı ve yazılımının satın alınmak yerine bir hizmet olarak kiralandığı model"},{"w":"pay-as-you-go","m":"kullandıkça öde, müşteri tarafından ihtiyaç duyuldukça satın alınan yazılım modeli"},{"w":"PCTE","m":"Taşınabilir Ortak Araç Ortamı (Portable Common Tool Environment), ortamların geliştirilmesinde mühendisleri destekleyen araç arayüzü"},{"w":"PERT chart","m":"Program Değerlendirme ve Gözden Geçirme Tekniği şeması (program evaluation review technique chart), bir proje içindeki görevleri koordine etmek için kullanılan araç"},{"w":"principle","m":"ilke, prensip, karar alma sürecine rehberlik eden kural"},{"w":"probability","m":"olasılık, ihtimal, bir şeyin gerçekleşme muhtemeliyeti derecesi"},{"w":"product certainty","m":"ürün kesinliği, kullanıcı gereksinimlerinin işlevselliği ve kalitesi ile belirlenen metrik"},{"w":"professional development","m":"mesleki gelişim, bir kişiyi bir işi yapmak için muktedir veya daha nitelikli hale getiren bilgi, beceri ve deneyim kazanma süreci"},{"w":"professional judgment","m":"mesleki muhakeme/yargı, mesleki deneyime dayanarak iyi kararlar verme yeteneği"},{"w":"program library","m":"program kütüphanesi, kullanıma hazır kod parçaları koleksiyonu"},{"w":"programming environment","m":"programlama ortamı (dil merkezli ortam olarak da bilinir), belirli bir programlama dilinde geliştirme yapmak için araçlar içeren etkileşimli geliştirme ortamı"},{"w":"public interest","m":"kamu yararı, bir bütün olarak toplumun refahı ve iyiliği"},{"w":"Putnam model","m":"Putnam modeli, bir proje için gereken çabayı ve bütçeyi tahmin etmek amacıyla sorunları ve çözümlerini dikkate alan maliyet tahmin modeli"},{"w":"quality control","m":"kalite kontrol, bir geliştirme süreci boyunca belirli standartları koruma sistemi"},{"w":"quality criteria","m":"kalite kriterleri/ölçütleri, doğrudan veya dolaylı olarak ölçülebilen kalite nitelikleri kümeleri"},{"w":"quality factor","m":"kalite faktörü, yalnızca dolaylı olarak ölçülebilen kalite niteliği"},{"w":"redundancy","m":"yedeklilik (redundancy), hata veya arıza durumunda yazılımın düzgün çalışmasını sağlamak için gerekli olmayan bileşenlerin veya mevcut bileşenlerin kopyalarının dahil edilmesi"},{"w":"relation style","m":"ilişki tarzı, büyük ölçüde motivasyon ve eğitime dayanan yönetim tarzı"},{"w":"reliability","m":"güvenilirlik, tutarlı ve hatasız olma niteliği"},{"w":"researcher","m":"araştırmacı, bir şey hakkında daha fazla bilgi edinmek için onu inceleyen ve analiz eden profesyonel"},{"w":"reserved checkout","m":"rezerve edilmiş/kilitli teslim alma (reserved checkout), bir dosyayı aynı anda yalnızca bir kişinin düzenlemesine izin veren sistem"},{"w":"retrace","m":"geri izlemek, üzerinden geçmek, halihazırda tamamlanmış olan adımları gözden geçirmek"},{"w":"risk factor","m":"risk faktörü, sorunların ortaya çıkma olasılığını artıran durum veya karakteristik"},{"w":"risk management","m":"risk yönetimi, riskleri belirleyen ve bunların aksaklıklara dönüşmesini önleyen süreç"},{"w":"safety","m":"güvenlik, emniyet, tehlikeye karşı korunmuş olma durumu"},{"w":"scope","m":"kapsam, bir şeyin boyutu veya içerdiği alan"},{"w":"separation style","m":"ayrım tarzı (separation style), ana hedefin verimlilik olduğu yönetim tarzı"},{"w":"skeleton","m":"iskelet, taslak, tüm ayrıntıları henüz doldurulmamış olan bileşen"},{"w":"software as a product","m":"ürün olarak yazılım, yazılımın tüketicilere paketlenmiş bir ticari mal (emtia) olarak satıldığı dağıtım modeli"},{"w":"software crisis","m":"yazılım krizi, yeni yazılım uygulamalarına olan talebin yazılım geliştiricilerin karşılayabileceğinden daha yüksek olması nedeniyle yazılım endüstrisinde yaşanan sorun"},{"w":"software life cycle","m":"yazılım yaşam döngüsü, yazılım oluşturmak, geliştirmek ve iyileştirmek için devam eden süreç"},{"w":"software on demand","m":"talep üzerine yazılım, yazılımın ihtiyaç duyulduğu anda bir sağlayıcıdan kiralandığı model"},{"w":"source code","m":"kaynak kodu, bir bilgisayar programında yürütülecek komutlar listesi"},{"w":"spatial layout level","m":"uzamsal yerleşim düzeyi, ekranda görüntülenen grafik öğeleri belirten materyal bileşeni görünümü"},{"w":"specialize","m":"uzmanlaşmak, öncelikle belirli bir görev veya alana odaklanmak"},{"w":"SSCS","m":"kaynak kodu kontrol sistemi (source code control system), kullanıcının dosyalardaki değişiklikleri takip etmesini ve sistemin herhangi bir sürümünü oluşturmasını sağlayan yapılandırma kontrol sistemi"},{"w":"standard domain","m":"standart alan, bir yazılım bileşenine yapılan doğru girdiler kümesi"},{"w":"substance","m":"öz, içerik, bir şeyin bileşenleri, kavramları ve prosedürleri"},{"w":"task analysis","m":"görev analizi, karmaşık bir sistemi kullanıcıları, görevleri, donanımı, sosyal çevresi ve fiziksel ortamı açısından değerlendirme eylemi"},{"w":"technical support","m":"teknik destek, bilgisayar ve yazılım sorunları yaşayan insanlara yardım etme süreci"},{"w":"tool","m":"araç, yazılım geliştirme sürecinde belirli bir görevi gerçekleştiren ürün"},{"w":"toolkit","m":"araç takımı/seti, araçların birbirinden bağımsız olduğu ve iyi entegre edilmediği geliştirme ortamı"},{"w":"transformation system","m":"dönüşüm sistemi, mühendislere sistemleri spesifikasyon kümelerinden çalıştırılabilir programlara dönüştürmede yardımcı olan uygulama"},{"w":"unit","m":"birim, ekip, küçük ve uzmanlaşmış insan grubu"},{"w":"UNIX","m":"yazılım geliştirme için genel bir destek ortamı/işletim sistemi (UNIX)"},{"w":"unreserved checkout","m":"rezerve edilmemiş/serbest teslim alma (unreserved checkout), dosyaların birden fazla geliştirici tarafından aynı anda düzenlenebildiği sistem"},{"w":"UVM","m":"kullanıcı sanal makinesi (user virtual machine), belirli bir sistemin donanımı ve yazılımı"},{"w":"VHLL","m":"çok yüksek seviyeli dil (very high level language), öncelikle programcılar tarafından yeni programlar oluşturmada yardım için kullanılan yüksek soyutlama düzeyine sahip programlama dili"},{"w":"visual programming environment","m":"görsel programlama ortamı, ortamın grafik yeteneklerini vurgulamak için kullanılan programlama ortamı"},{"w":"Walston-Felix","m":"üretkenliği etkileyen 29 değişkeni tanımlayan yazılım maliyeti ve çabası hesaplama modeli (Walston-Felix modeli)"},{"w":"welfare","m":"refah, esenlik, bir kişi veya grubun genel sağlık ve mutluluk durumu"},{"w":"workbench","m":"çalışma tezgahı (workbench), yazılım geliştirme sürecini sınırlı bir kapsamda destekleyen ilgili araçlar kümesi"}]};
+
     // --- DURUM DEĞİŞKENLERİ ---
-    let allWords = [];       // [{ word: "...", meaning: "..." }]
-    let quizQueue = [];      // Testte sorulacak sorular
+    let allWords = [];
+    let lastRawTableRows = null; // Son yüklenen tablo satırları (sütun seçici için)
+    let quizQueue = [];
     let currentIndex = 0;
     let correctCount = 0;
     let wrongCount = 0;
-    let answerHistory = [];  // Sonuç ekranı için kayıtlar
+    let answerHistory = [];
     let timerInterval = null;
     let timeRemaining = 10;
     let maxTimePerQuestion = 10;
     let isLocked = false;
 
-    const STORAGE_KEY = 'kelime_ezber_kayitli_liste_v1';
+    const STORAGE_KEY = 'kelime_ezber_kayitli_liste_v2';
+
+    // Eski hatalı önbelleği temizle
+    try {
+      localStorage.removeItem('kelime_ezber_kayitli_liste_v1');
+    } catch (e) {}
 
     // --- DOM ELEMANLARI ---
     const setupScreen = document.getElementById('setupScreen');
@@ -765,11 +861,18 @@
 
     const fileInput = document.getElementById('fileInput');
     const dropZone = document.getElementById('dropZone');
+    const colMapper = document.getElementById('colMapper');
+    const wordColSelect = document.getElementById('wordColSelect');
+    const meaningColSelect = document.getElementById('meaningColSelect');
+
+    const loadPreset1 = document.getElementById('loadPreset1');
+    const loadPreset2 = document.getElementById('loadPreset2');
+    const loadPreset3 = document.getElementById('loadPreset3');
+
     const pasteToggleBtn = document.getElementById('pasteToggleBtn');
     const pasteBox = document.getElementById('pasteBox');
     const pasteInput = document.getElementById('pasteInput');
     const parsePasteBtn = document.getElementById('parsePasteBtn');
-    const sampleBtn = document.getElementById('sampleBtn');
 
     const statusDot = document.getElementById('statusDot');
     const wordCountText = document.getElementById('wordCountText');
@@ -778,6 +881,7 @@
     const previewList = document.getElementById('previewList');
 
     const directionSelect = document.getElementById('directionSelect');
+    const countSelect = document.getElementById('countSelect');
     const timeSelect = document.getElementById('timeSelect');
     const startQuizBtn = document.getElementById('startQuizBtn');
 
@@ -800,67 +904,200 @@
     const restartAllBtn = document.getElementById('restartAllBtn');
     const backHomeBtn = document.getElementById('backHomeBtn');
 
-    // --- BAŞLANGIÇTA KAYITLI KELİMELERİ YÜKLE ---
-    window.addEventListener('DOMContentLoaded', () => {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            allWords = parsed;
-            updateWordStatusUI();
-          }
-        }
-      } catch (e) {
-        console.warn('Kayıtlı kelimeler okunamadı:', e);
-      }
-    });
-
-    // --- YARDIMCI: BAŞLIK SATIRI MI KONTROLÜ ---
-    function isHeaderPair(w, m) {
-      const cleanW = w.toLowerCase().trim();
-      const cleanM = m.toLowerCase().trim();
-      const headerWords = ['kelime', 'kelimeler', 'word', 'words', 'ingilizce', 'english', 'terim', 'kavram', 'soru'];
-      const headerMeanings = ['anlam', 'anlamı', 'anlamlar', 'meaning', 'meanings', 'türkçe', 'turkish', 'açıklama', 'tanım', 'cevap'];
-      return headerWords.includes(cleanW) && headerMeanings.includes(cleanM);
+    // --- DİL KODU VEYA SIRA NUMARASI MI KONTROLÜ ---
+    function isLangOrIndexToken(str) {
+      const s = String(str ?? '').trim().toLowerCase();
+      if (!s) return true;
+      if (/^\d+[\.\)\-]?$/.test(s)) return true; // 1, 2, 3.
+      const langCodes = ['en', 'de', 'tr', 'fr', 'es', 'it', 'ru', 'ar', 'pt', 'nl', 'ja', 'zh', 'en/de', 'dil', 'dil (en/de)'];
+      return langCodes.includes(s);
     }
 
-    // --- YARDIMCI: TEK SATIRDAN KELİME - ANLAM AYIKLAMA ---
+    // --- BAŞLIK HÜCRESİ Mİ KONTROLÜ ---
+    function isHeaderRowCells(cells) {
+      const joined = cells.map(c => String(c ?? '').toLowerCase().trim());
+      const hasWordHeader = joined.some(c =>
+        c === 'kelime' || c === 'kelimeler' || c === 'word' || c === 'words' ||
+        c === 'ingilizce' || c === 'english' || c.includes('dil (en/de)')
+      );
+      const hasMeaningHeader = joined.some(c =>
+        c.includes('türkçe anlam') || c === 'anlam' || c === 'anlamı' ||
+        c === 'meaning' || c === 'türkçe' || c === 'açıklama'
+      );
+      return hasWordHeader || hasMeaningHeader;
+    }
+
+    // --- TABLO SATIRLARINDAN AKILLI SÜTUN ALGILAMA ---
+    function detectBestColumns(rows) {
+      if (!rows || rows.length === 0) return { wordCol: 0, meaningCol: 1, hasHeader: false, headers: [] };
+
+      const firstRow = rows[0].map(c => String(c ?? '').trim());
+      const lowerFirst = firstRow.map(c => c.toLowerCase());
+
+      let wordCol = -1;
+      let meaningCol = -1;
+      let hasHeader = isHeaderRowCells(firstRow);
+
+      if (hasHeader) {
+        lowerFirst.forEach((colText, idx) => {
+          if (wordCol === -1 && (colText === 'kelime' || colText === 'kelimeler' || colText === 'word' || colText === 'ingilizce' || colText === 'english' || colText === 'terim')) {
+            wordCol = idx;
+          }
+          if (meaningCol === -1 && (colText.includes('anlam') || colText === 'türkçe' || colText === 'meaning' || colText === 'açıklama' || colText === 'karşılığı')) {
+            meaningCol = idx;
+          }
+        });
+      }
+
+      // Eğer başlıktan bulunamadıysa ilk veri satırlarını incele
+      if (wordCol === -1 || meaningCol === -1 || wordCol === meaningCol) {
+        const sampleRow = rows.find((r, idx) => idx > 0 && r.filter(c => String(c ?? '').trim() !== '').length >= 2) || rows[0];
+        const nonEmptyIndices = [];
+        sampleRow.forEach((cell, idx) => {
+          const val = String(cell ?? '').trim();
+          if (val !== '') nonEmptyIndices.push({ idx, val });
+        });
+
+        // İlk sütun "en", "de" veya sıra numarası (1, 2, 3) ise atla
+        if (nonEmptyIndices.length >= 3 && isLangOrIndexToken(nonEmptyIndices[0].val)) {
+          wordCol = nonEmptyIndices[1].idx;
+          meaningCol = nonEmptyIndices[2].idx;
+        } else if (nonEmptyIndices.length >= 2) {
+          wordCol = nonEmptyIndices[0].idx;
+          meaningCol = nonEmptyIndices[1].idx;
+        } else {
+          wordCol = 0;
+          meaningCol = 1;
+        }
+      }
+
+      const maxCols = Math.max(...rows.slice(0, 15).map(r => r.length), 2);
+      const headers = [];
+      for (let i = 0; i < maxCols; i++) {
+        const hName = hasHeader && firstRow[i] ? firstRow[i] : `Sütun ${i + 1}`;
+        headers.push(hName);
+      }
+
+      return { wordCol, meaningCol, hasHeader, headers };
+    }
+
+    // --- BELİRLENEN SÜTUNLARA GÖRE TABLODAN KELİMELERİ ÇIKAR ---
+    function extractPairsFromTable(rows, customWordCol = null, customMeaningCol = null) {
+      if (!rows || rows.length === 0) return [];
+
+      const detected = detectBestColumns(rows);
+      const wCol = customWordCol !== null ? customWordCol : detected.wordCol;
+      const mCol = customMeaningCol !== null ? customMeaningCol : detected.meaningCol;
+
+      const extracted = [];
+
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        if (!Array.isArray(row)) continue;
+
+        // İlk satır başlık satırıysa atla
+        if (i === 0 && detected.hasHeader) continue;
+        if (isHeaderRowCells(row)) continue;
+
+        const nonEmpty = row.map(c => String(c ?? '').trim()).filter(Boolean);
+        if (nonEmpty.length === 0) continue;
+
+        // Tek sütunlu bir satırsa içinde "kelime - anlam" var mı kontrol et
+        if (nonEmpty.length === 1) {
+          const single = parseSingleLine(nonEmpty[0]);
+          if (single) extracted.push(single);
+          continue;
+        }
+
+        const rawW = String(row[wCol] ?? '').replace(/\r?\n/g, ' ').trim();
+        const rawM = String(row[mCol] ?? '').replace(/\r?\n/g, ' ').trim();
+
+        if (rawW && rawM && !isLangOrIndexToken(rawW)) {
+          extracted.push({ word: rawW, meaning: rawM });
+        }
+      }
+
+      return extracted;
+    }
+
+    // --- SÜTUN SEÇİCİ ARAYÜZÜNÜ GÜNCELLE ---
+    function setupColumnMapperUI(rows) {
+      if (!rows || rows.length === 0) {
+        colMapper.classList.remove('visible');
+        return;
+      }
+      const detected = detectBestColumns(rows);
+      if (detected.headers.length < 2) {
+        colMapper.classList.remove('visible');
+        return;
+      }
+
+      lastRawTableRows = rows;
+      wordColSelect.innerHTML = '';
+      meaningColSelect.innerHTML = '';
+
+      detected.headers.forEach((h, idx) => {
+        const opt1 = document.createElement('option');
+        opt1.value = idx;
+        opt1.textContent = `${idx + 1}. ${h}`;
+        if (idx === detected.wordCol) opt1.selected = true;
+        wordColSelect.appendChild(opt1);
+
+        const opt2 = document.createElement('option');
+        opt2.value = idx;
+        opt2.textContent = `${idx + 1}. ${h}`;
+        if (idx === detected.meaningCol) opt2.selected = true;
+        meaningColSelect.appendChild(opt2);
+      });
+
+      colMapper.classList.add('visible');
+    }
+
+    function onColumnChange() {
+      if (!lastRawTableRows) return;
+      const wIdx = parseInt(wordColSelect.value, 10);
+      const mIdx = parseInt(meaningColSelect.value, 10);
+      const pairs = extractPairsFromTable(lastRawTableRows, wIdx, mIdx);
+      setWordList(pairs);
+    }
+
+    wordColSelect.addEventListener('change', onColumnChange);
+    meaningColSelect.addEventListener('change', onColumnChange);
+
+    // --- TEK SATIR METİNDEN KELİME - ANLAM AYIKLAMA ---
     function parseSingleLine(line) {
       if (!line) return null;
-      // Başındaki sıra numarası veya madde işaretini temizle: "1. apple - elma" -> "apple - elma"
       let cleaned = line.trim().replace(/^\s*(?:\d+[\.\)\-]|[\•\●\▪\▸\*])\s*/, '').trim();
       if (!cleaned) return null;
 
-      // Tab, |, =, :, -, – veya — ile ayrılmışsa böl
-      const separators = ['\t', ' | ', '|', ' = ', '=', ' : ', ':', ' - ', ' – ', ' — ', ';', ' / '];
+      // Eğer tab ile ayrılmış 3+ parça varsa ve ilki "en" ise: "en \t word \t meaning"
+      if (cleaned.includes('\t')) {
+        const parts = cleaned.split('\t').map(s => s.trim()).filter(Boolean);
+        if (parts.length >= 3 && isLangOrIndexToken(parts[0])) {
+          return { word: parts[1], meaning: parts[2] };
+        }
+        if (parts.length >= 2 && !isHeaderRowCells(parts)) {
+          return { word: parts[0], meaning: parts[1] };
+        }
+      }
+
+      const separators = [' | ', '|', ' = ', '=', ' : ', ':', ' - ', ' – ', ' — ', ';', ' / '];
       for (const sep of separators) {
         const idx = cleaned.indexOf(sep);
         if (idx > 0) {
           const left = cleaned.slice(0, idx).trim();
           const right = cleaned.slice(idx + sep.length).trim();
-          if (left && right && !isHeaderPair(left, right)) {
+          if (left && right && !isLangOrIndexToken(left) && !isHeaderRowCells([left, right])) {
             return { word: left, meaning: right };
           }
         }
       }
 
-      // Tire boşluksuz yazıldıysa (örn: "apple-elma") ama birleşik kelime değilse
       const dashMatch = cleaned.match(/^([^\-\:]+?)[\-\–\—\:]([^\-\:]+)$/);
       if (dashMatch) {
         const left = dashMatch[1].trim();
         const right = dashMatch[2].trim();
-        if (left && right && !isHeaderPair(left, right)) {
-          return { word: left, meaning: right };
-        }
-      }
-
-      // En az 2 boşlukla ayrılmışsa
-      const multiSpace = cleaned.split(/\s{2,}/);
-      if (multiSpace.length >= 2) {
-        const left = multiSpace[0].trim();
-        const right = multiSpace.slice(1).join(' ').trim();
-        if (left && right && !isHeaderPair(left, right)) {
+        if (left && right && !isLangOrIndexToken(left)) {
           return { word: left, meaning: right };
         }
       }
@@ -868,171 +1105,115 @@
       return null;
     }
 
-    // --- YARDIMCI: TABLO SATIRINDAN (HÜCRE DİZİSİNDEN) KELİME AYIKLAMA ---
-    function parseRowCells(cells) {
-      const nonEmpty = cells
-        .map(c => String(c ?? '').replace(/\r?\n/g, ' ').trim())
-        .filter(c => c.length > 0);
-
-      if (nonEmpty.length === 0) return null;
-
-      // Tek hücre varsa içinde "kelime - anlam" var mı bak
-      if (nonEmpty.length === 1) {
-        return parseSingleLine(nonEmpty[0]);
-      }
-
-      // İlk sütun sadece sıra numarasıysa (1, 2, 3...) ve en az 3 sütun varsa 2. ve 3. sütunu al
-      if (nonEmpty.length >= 3 && /^\d+[\.\)]?$/.test(nonEmpty[0])) {
-        const w = nonEmpty[1];
-        const m = nonEmpty[2];
-        if (w && m && !isHeaderPair(w, m)) {
-          return { word: w, meaning: m };
-        }
-      }
-
-      const w = nonEmpty[0];
-      const m = nonEmpty[1];
-      if (!w || !m || /^\d+[\.\)]?$/.test(w) && /^\d+[\.\)]?$/.test(m)) return null;
-      if (isHeaderPair(w, m)) return null;
-
-      return { word: w, meaning: m };
-    }
-
-    // --- KELİMELERİ LİSTEYE EKLE (TEKRARLARI ÖNLEYEREK) ---
-    function addExtractedWords(pairs) {
-      let addedCount = 0;
-      const existingSet = new Set(allWords.map(item => `${item.word.toLowerCase()}|||${item.meaning.toLowerCase()}`));
+    // --- KELİME LİSTESİNİ SET ET ---
+    function setWordList(pairs) {
+      const cleanList = [];
+      const seen = new Set();
 
       for (const p of pairs) {
-        if (!p || !p.word || !p.meaning) continue;
-        const w = p.word.trim();
-        const m = p.meaning.trim();
-        if (!w || !m || w.toLowerCase() === m.toLowerCase()) continue;
-
+        const w = String(p.word ?? p.w ?? '').trim();
+        const m = String(p.meaning ?? p.m ?? '').trim();
+        if (!w || !m || isLangOrIndexToken(w)) continue;
         const key = `${w.toLowerCase()}|||${m.toLowerCase()}`;
-        if (!existingSet.has(key)) {
-          existingSet.add(key);
-          allWords.push({ word: w, meaning: m });
-          addedCount++;
+        if (!seen.has(key)) {
+          seen.add(key);
+          cleanList.push({ word: w, meaning: m });
         }
       }
 
+      allWords = cleanList;
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(allWords));
       } catch (e) {}
 
       updateWordStatusUI();
-      return addedCount;
+      return allWords.length;
     }
 
-    // --- EXCEL (.xlsx, .xls, .csv) TARAYICI ---
+    // --- EXCEL (.xlsx, .xls, .csv) OKUYUCU ---
     async function parseExcelFile(file) {
       const arrayBuffer = await file.arrayBuffer();
       const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-      const extracted = [];
+      let allRows = [];
 
       for (const sheetName of workbook.SheetNames) {
         const sheet = workbook.Sheets[sheetName];
         const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
-        for (const row of rows) {
-          if (Array.isArray(row)) {
-            const pair = parseRowCells(row);
-            if (pair) extracted.push(pair);
-          }
+        if (rows && rows.length > 0) {
+          allRows = allRows.concat(rows);
         }
       }
-      return extracted;
+
+      setupColumnMapperUI(allRows);
+      return extractPairsFromTable(allRows);
     }
 
-    // --- WORD (.docx) TARAYICI (HEM TABLOLARI HEM DÜZ YAZILARI TARAR) ---
+    // --- WORD (.docx) OKUYUCU ---
     async function parseDocxFile(file) {
       const arrayBuffer = await file.arrayBuffer();
-      const extracted = [];
+      const tableRows = [];
+      const linePairs = [];
 
-      // 1. Yöntem: JSZip ile word/document.xml içindeki tablo (<w:tbl>) ve paragrafları (<w:p>) doğrudan oku
       try {
         const zip = await JSZip.loadAsync(arrayBuffer);
         const docXmlFile = zip.file('word/document.xml');
         if (docXmlFile) {
           const xmlText = await docXmlFile.async('string');
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+          const xmlDoc = new DOMParser().parseFromString(xmlText, 'application/xml');
 
-          // A) Tablo satırlarını (<w:tr>) tara
-          const tableRows = Array.from(xmlDoc.getElementsByTagName('w:tr'));
-          for (const tr of tableRows) {
+          // Tablo satırları (<w:tr>)
+          const trList = Array.from(xmlDoc.getElementsByTagName('w:tr'));
+          for (const tr of trList) {
             const cells = Array.from(tr.getElementsByTagName('w:tc')).map(tc => {
-              const texts = Array.from(tc.getElementsByTagName('w:t')).map(t => t.textContent || '');
-              return texts.join('').trim();
+              return Array.from(tc.getElementsByTagName('w:t')).map(t => t.textContent || '').join('').trim();
             });
-            const pair = parseRowCells(cells);
-            if (pair) extracted.push(pair);
+            if (cells.some(Boolean)) tableRows.push(cells);
           }
 
-          // B) Tablo dışındaki paragrafları (<w:p>) tara
-          const allParagraphs = Array.from(xmlDoc.getElementsByTagName('w:p'));
-          for (const p of allParagraphs) {
-            // Eğer paragraf bir tablonun içindeyse tekrar ekleme
+          // Tablo dışı paragraflar (<w:p>)
+          const pList = Array.from(xmlDoc.getElementsByTagName('w:p'));
+          for (const p of pList) {
             let parent = p.parentNode;
             let insideTable = false;
             while (parent) {
-              if (parent.nodeName === 'w:tbl') {
-                insideTable = true;
-                break;
-              }
+              if (parent.nodeName === 'w:tbl') { insideTable = true; break; }
               parent = parent.parentNode;
             }
             if (insideTable) continue;
 
-            // Paragraf içindeki metin ve tab (<w:tab/>) elemanlarını sırayla birleştir
             let lineStr = '';
             const walker = xmlDoc.createTreeWalker(p, NodeFilter.SHOW_ELEMENT);
             let node = walker.nextNode();
             while (node) {
-              if (node.nodeName === 'w:t') {
-                lineStr += node.textContent || '';
-              } else if (node.nodeName === 'w:tab') {
-                lineStr += '\t';
-              } else if (node.nodeName === 'w:br' || node.nodeName === 'w:cr') {
-                lineStr += '\n';
-              }
+              if (node.nodeName === 'w:t') lineStr += node.textContent || '';
+              else if (node.nodeName === 'w:tab') lineStr += '\t';
+              else if (node.nodeName === 'w:br' || node.nodeName === 'w:cr') lineStr += '\n';
               node = walker.nextNode();
             }
 
             for (const subLine of lineStr.split(/\r?\n/)) {
               const pair = parseSingleLine(subLine);
-              if (pair) extracted.push(pair);
+              if (pair) linePairs.push(pair);
             }
           }
         }
-      } catch (err) {
-        console.warn('XML okuma yedek yönteme geçiyor:', err);
+      } catch (e) {
+        console.warn('DOCX XML okuma hatası:', e);
       }
 
-      // 2. Yöntem: Mammoth.js ile HTML/Metin yedeği
-      if (extracted.length === 0 && window.mammoth) {
-        const htmlResult = await mammoth.convertToHtml({ arrayBuffer });
-        const tempDoc = new DOMParser().parseFromString(htmlResult.value, 'text/html');
-
-        tempDoc.querySelectorAll('tr').forEach(tr => {
-          const cells = Array.from(tr.querySelectorAll('td, th')).map(td => td.textContent.trim());
-          const pair = parseRowCells(cells);
-          if (pair) extracted.push(pair);
-        });
-
-        const rawResult = await mammoth.extractRawText({ arrayBuffer });
-        rawResult.value.split(/\r?\n/).forEach(line => {
-          const pair = parseSingleLine(line);
-          if (pair) extracted.push(pair);
-        });
+      if (tableRows.length > 0) {
+        setupColumnMapperUI(tableRows);
+        return [...extractPairsFromTable(tableRows), ...linePairs];
+      } else {
+        colMapper.classList.remove('visible');
+        return linePairs;
       }
-
-      return extracted;
     }
 
-    // --- DÜZ METİN (.txt, .csv) TARAYICI ---
+    // --- METİN (.txt) OKUYUCU ---
     async function parseTextFile(file) {
       const text = await file.text();
+      colMapper.classList.remove('visible');
       const extracted = [];
       for (const line of text.split(/\r?\n/)) {
         const pair = parseSingleLine(line);
@@ -1041,44 +1222,44 @@
       return extracted;
     }
 
-    // --- DOSYA YÜKLEME İŞLEYİCİSİ ---
+    // --- DOSYA SEÇİLDİĞİNDE VEYA SÜRÜKLENDİĞİNDE ---
     async function handleFiles(fileList) {
       if (!fileList || fileList.length === 0) return;
 
-      wordCountText.textContent = 'Dosya taranıyor, lütfen bekleyin...';
-      let totalAdded = 0;
+      wordCountText.textContent = 'Dosya taranıyor...';
+      let combinedPairs = [];
 
       for (const file of fileList) {
         const name = file.name.toLowerCase();
         try {
-          let pairs = [];
           if (name.endsWith('.xlsx') || name.endsWith('.xls') || name.endsWith('.csv')) {
-            pairs = await parseExcelFile(file);
+            const pairs = await parseExcelFile(file);
+            combinedPairs = combinedPairs.concat(pairs);
           } else if (name.endsWith('.docx')) {
-            pairs = await parseDocxFile(file);
+            const pairs = await parseDocxFile(file);
+            combinedPairs = combinedPairs.concat(pairs);
           } else {
-            pairs = await parseTextFile(file);
+            const pairs = await parseTextFile(file);
+            combinedPairs = combinedPairs.concat(pairs);
           }
-          totalAdded += addExtractedWords(pairs);
         } catch (err) {
           console.error('Dosya okuma hatası:', err);
-          alert(`${file.name} okunurken bir hata oluştu. Lütfen dosya formatını kontrol edin.`);
+          alert(`${file.name} okunurken bir hata oluştu.`);
         }
       }
 
       fileInput.value = '';
-      if (totalAdded === 0 && allWords.length === 0) {
-        alert('Dosyada "Kelime - Anlam" eşleşmesi bulunamadı. Kelimelerin tablo halinde veya "kelime - anlam" şeklinde yazıldığından emin olun.');
+      if (combinedPairs.length > 0) {
+        setWordList(combinedPairs);
+        previewList.classList.add('visible');
+      } else {
+        alert('Dosyada kelime-anlam eşleşmesi bulunamadı.');
+        updateWordStatusUI();
       }
-      updateWordStatusUI();
     }
 
     fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
-
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('dragover');
-    });
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
     dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
@@ -1086,10 +1267,27 @@
       handleFiles(e.dataTransfer.files);
     });
 
-    // --- METİN YAPIŞTIRMA & ÖRNEK KELİME ---
-    pasteToggleBtn.addEventListener('click', () => {
-      pasteBox.classList.toggle('open');
+    // --- HAZIR LİSTE BUTONLARI ---
+    loadPreset1.addEventListener('click', () => {
+      colMapper.classList.remove('visible');
+      setWordList(PRESET_DATA.yeniKelimeler);
+      previewList.classList.add('visible');
     });
+
+    loadPreset2.addEventListener('click', () => {
+      colMapper.classList.remove('visible');
+      setWordList(PRESET_DATA.kelimelerListesi);
+      previewList.classList.add('visible');
+    });
+
+    loadPreset3.addEventListener('click', () => {
+      colMapper.classList.remove('visible');
+      setWordList(PRESET_DATA.tumKelimeler);
+      previewList.classList.add('visible');
+    });
+
+    // --- MANUEL YAPIŞTIRMA ---
+    pasteToggleBtn.addEventListener('click', () => pasteBox.classList.toggle('open'));
 
     parsePasteBtn.addEventListener('click', () => {
       const text = pasteInput.value.trim();
@@ -1099,32 +1297,18 @@
         const pair = parseSingleLine(line);
         if (pair) pairs.push(pair);
       }
-      const added = addExtractedWords(pairs);
-      if (added > 0) {
+      if (pairs.length > 0) {
+        colMapper.classList.remove('visible');
+        setWordList(pairs);
         pasteInput.value = '';
         pasteBox.classList.remove('open');
+        previewList.classList.add('visible');
       } else {
-        alert('Yapıştırılan metinden kelime ayrıştırılamadı. Lütfen her satıra "kelime - anlam" formatında yazın.');
+        alert('Kelimeler ayrıştırılamadı. Her satıra "kelime - anlam" şeklinde yazın.');
       }
     });
 
-    sampleBtn.addEventListener('click', () => {
-      const samples = [
-        { word: 'Abandon', meaning: 'Terk etmek, vazgeçmek' },
-        { word: 'Benevolent', meaning: 'İyiliksever, hayırsever' },
-        { word: 'Candidate', meaning: 'Aday' },
-        { word: 'Diligent', meaning: 'Çalışkan, gayretli' },
-        { word: 'Eloquent', meaning: 'Güzel ve etkili konuşan' },
-        { word: 'Fragile', meaning: 'Kırılgan, hassas' },
-        { word: 'Genuine', meaning: 'Gerçek, samimi, özgün' },
-        { word: 'Hesitate', meaning: 'Tereddüt etmek, duraksamak' },
-        { word: 'Inevitable', meaning: 'Kaçınılmaz' },
-        { word: 'Jeopardize', meaning: 'Tehlikeye atmak' }
-      ];
-      addExtractedWords(samples);
-    });
-
-    // --- KELİME LİSTESİ DURUM GÜNCELLEME ---
+    // --- ARAYÜZ GÜNCELLEME ---
     function updateWordStatusUI() {
       const count = allWords.length;
       if (count > 0) {
@@ -1143,25 +1327,24 @@
       }
 
       previewList.innerHTML = allWords
+        .slice(0, 200)
         .map((item, idx) => `
           <div class="preview-item">
             <span class="preview-word">${idx + 1}. ${escapeHtml(item.word)}</span>
             <span class="preview-meaning">${escapeHtml(item.meaning)}</span>
           </div>
         `)
-        .join('');
+        .join('') + (allWords.length > 200 ? `<div class="preview-item" style="justify-content:center; color:#94a3b8;">...ve ${allWords.length - 200} kelime daha</div>` : '');
     }
 
-    togglePreviewBtn.addEventListener('click', () => {
-      previewList.classList.toggle('visible');
-    });
+    togglePreviewBtn.addEventListener('click', () => previewList.classList.toggle('visible'));
 
     clearWordsBtn.addEventListener('click', () => {
-      if (confirm('Yüklü tüm kelimeleri silmek istediğinize emin misiniz?')) {
-        allWords = [];
-        localStorage.removeItem(STORAGE_KEY);
-        updateWordStatusUI();
-      }
+      allWords = [];
+      lastRawTableRows = null;
+      colMapper.classList.remove('visible');
+      localStorage.removeItem(STORAGE_KEY);
+      updateWordStatusUI();
     });
 
     function escapeHtml(str) {
@@ -1181,16 +1364,45 @@
       return copy;
     }
 
-    // --- TESTİ BAŞLATMA ---
-    function startQuiz(customWordSubset = null) {
-      const sourceWords = customWordSubset && customWordSubset.length > 0 ? customWordSubset : allWords;
+    // --- BAŞLANGIÇTA KAYITLI VEYA VARSAYILAN KELİMELERİ YÜKLE ---
+    window.addEventListener('DOMContentLoaded', () => {
+      let loaded = false;
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0 && !isLangOrIndexToken(parsed[0].word)) {
+            allWords = parsed;
+            loaded = true;
+          }
+        }
+      } catch (e) {}
+
+      if (!loaded && PRESET_DATA && Array.isArray(PRESET_DATA.yeniKelimeler)) {
+        setWordList(PRESET_DATA.yeniKelimeler);
+      } else {
+        updateWordStatusUI();
+      }
+    });
+
+    // --- TESTİ BAŞLAT ---
+    function startQuiz(customSubset = null) {
+      const sourceWords = customSubset && customSubset.length > 0 ? customSubset : allWords;
       if (sourceWords.length === 0) return;
 
       maxTimePerQuestion = parseInt(timeSelect.value, 10) || 10;
       const mode = directionSelect.value;
+      const countVal = countSelect.value;
 
-      // Soruları karıştır ve yönünü belirle
-      quizQueue = shuffleArray(sourceWords).map(item => {
+      let shuffled = shuffleArray(sourceWords);
+      if (!customSubset && countVal !== 'all') {
+        const limit = parseInt(countVal, 10);
+        if (limit > 0 && limit < shuffled.length) {
+          shuffled = shuffled.slice(0, limit);
+        }
+      }
+
+      quizQueue = shuffled.map(item => {
         const askReverse = mode === 'reverse' || (mode === 'mixed' && Math.random() < 0.5);
         return {
           rawItem: item,
@@ -1211,7 +1423,7 @@
 
     startQuizBtn.addEventListener('click', () => startQuiz());
 
-    // --- SORU GÖSTERİMİ VE 4 ŞIK OLUŞTURMA ---
+    // --- SORU VE 4 ŞIK OLUŞTURMA ---
     function renderCurrentQuestion() {
       clearInterval(timerInterval);
       if (currentIndex >= quizQueue.length) {
@@ -1229,20 +1441,18 @@
       liveWrong.textContent = wrongCount;
 
       questionLabel.textContent = q.askReverse
-        ? 'BU ANLAMA GELEN KELİME HANGİSİDİR?'
-        : 'BU KELİMENİN ANLAMI NEDİR?';
+        ? 'BU ANLAMA GELEN İNGİLİZCE KELİME HANGİSİDİR?'
+        : 'BU KELİMENİN TÜRKÇE ANLAMI NEDİR?';
       questionWord.textContent = q.prompt;
 
-      // Yanlış şıklar için havuz oluştur
+      // Yanlış şıkları tüm kelimeler içinden seç
       const pool = allWords
         .map(w => (q.askReverse ? w.word : w.meaning))
-        .filter(ans => ans.toLowerCase() !== q.correctAnswer.toLowerCase());
+        .filter(ans => ans.trim().toLowerCase() !== q.correctAnswer.trim().toLowerCase());
 
-      // Tekrarlı şıkları çıkar ve karıştır
       const uniqueWrongPool = shuffleArray([...new Set(pool)]);
       const distractors = uniqueWrongPool.slice(0, 3);
 
-      // Eğer dosyada 4'ten az kelime varsa yedek şık tamamla
       const fallbackOptions = ['Hiçbiri', 'Belirsiz', 'Diğer', 'Geçersiz'];
       let fIdx = 0;
       while (distractors.length < 3) {
@@ -1252,30 +1462,34 @@
         }
       }
 
-      const options = shuffleArray([q.correctAnswer, ...distractors]);
-      const letters = ['A', 'B', 'C', 'D'];
+      const options = shuffleArray([
+        { text: q.correctAnswer, isCorrect: true },
+        ...distractors.map(d => ({ text: d, isCorrect: false }))
+      ]);
 
+      const letters = ['A', 'B', 'C', 'D'];
       optionsGrid.innerHTML = '';
-      options.forEach((optText, idx) => {
+
+      options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'option-btn';
-        btn.dataset.answer = optText;
+        btn.dataset.correct = opt.isCorrect ? 'true' : 'false';
         btn.innerHTML = `
           <div class="option-left">
             <span class="option-letter">${letters[idx]}</span>
-            <span>${escapeHtml(optText)}</span>
+            <span>${escapeHtml(opt.text)}</span>
           </div>
           <span class="option-status-icon"></span>
         `;
-        btn.addEventListener('click', () => handleOptionClick(btn, optText));
+        btn.addEventListener('click', () => handleOptionClick(btn, opt));
         optionsGrid.appendChild(btn);
       });
 
       startQuestionTimer();
     }
 
-    // --- 10 SANİYELİK GERİ SAYIM SAYACI ---
+    // --- 10 SANİYELİK SAYAÇ ---
     function startQuestionTimer() {
       timeRemaining = maxTimePerQuestion;
       updateTimerVisuals();
@@ -1310,19 +1524,19 @@
       }
     }
 
-    // --- ŞIKKA TIKLANDIĞINDA DOĞRU / YANLIŞ GÖSTER VE SONRAKİ SORUYA GEÇ ---
-    function handleOptionClick(clickedBtn, chosenText) {
+    // --- ŞIKKA TIKLAMA ---
+    function handleOptionClick(clickedBtn, chosenOpt) {
       if (isLocked) return;
       isLocked = true;
       clearInterval(timerInterval);
 
       const q = quizQueue[currentIndex];
-      const isCorrect = chosenText === q.correctAnswer;
+      const isCorrect = chosenOpt.isCorrect;
       const allButtons = Array.from(optionsGrid.querySelectorAll('.option-btn'));
 
       allButtons.forEach(btn => {
         btn.disabled = true;
-        if (btn.dataset.answer === q.correctAnswer) {
+        if (btn.dataset.correct === 'true') {
           btn.classList.add('correct');
           btn.querySelector('.option-status-icon').textContent = '✅';
         }
@@ -1346,7 +1560,7 @@
         rawItem: q.rawItem,
         prompt: q.prompt,
         correctAnswer: q.correctAnswer,
-        userAnswer: chosenText,
+        userAnswer: chosenOpt.text,
         isCorrect
       });
 
@@ -1356,7 +1570,7 @@
       }, 1100);
     }
 
-    // --- SÜRE DOLDUĞUNDA ---
+    // --- SÜRE DOLMASI ---
     function handleTimeout() {
       if (isLocked) return;
       isLocked = true;
@@ -1368,7 +1582,7 @@
       const allButtons = Array.from(optionsGrid.querySelectorAll('.option-btn'));
       allButtons.forEach(btn => {
         btn.disabled = true;
-        if (btn.dataset.answer === q.correctAnswer) {
+        if (btn.dataset.correct === 'true') {
           btn.classList.add('correct');
           btn.querySelector('.option-status-icon').textContent = '✅';
         }
@@ -1391,7 +1605,7 @@
       }, 1250);
     }
 
-    // --- TEST SONUÇ EKRANI ---
+    // --- TEST SONUCU ---
     function finishQuiz() {
       clearInterval(timerInterval);
       showScreen(resultScreen);
@@ -1424,19 +1638,12 @@
       retryWrongBtn.style.display = wrongItems.length > 0 ? 'inline-flex' : 'none';
     }
 
-    quitQuizBtn.addEventListener('click', () => {
-      finishQuiz();
-    });
-
+    quitQuizBtn.addEventListener('click', () => finishQuiz());
     retryWrongBtn.addEventListener('click', () => {
       const wrongItems = answerHistory.filter(h => !h.isCorrect).map(h => h.rawItem);
       startQuiz(wrongItems);
     });
-
-    restartAllBtn.addEventListener('click', () => {
-      startQuiz();
-    });
-
+    restartAllBtn.addEventListener('click', () => startQuiz());
     backHomeBtn.addEventListener('click', () => {
       clearInterval(timerInterval);
       showScreen(setupScreen);
